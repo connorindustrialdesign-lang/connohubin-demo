@@ -30,9 +30,9 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetic
 .theme-toggle{background:transparent;border:0;font-size:18px;cursor:pointer;padding:6px;border-radius:6px}
 
 /* Full-width category bar beneath header */
-.category-bar{width:100%;display:flex;justify-content:space-around;align-items:center;padding:14px 0;border-top:0;border-bottom:1px solid rgba(0,0,0,0.04);gap:0;background:transparent}
-.category-bar a{flex:1;text-align:center;text-decoration:none;color:var(--muted);font-weight:700;padding:6px 10px;font-size:clamp(14px,2vw,20px)}
-.category-bar a:hover{color:var(--text)}
+.category-bar{width:100%;display:flex;justify-content:space-around;align-items:center;padding:14px 0;border-top:0;border-bottom:0;gap:0;background:#000}
+.category-bar a{flex:1;text-align:center;text-decoration:none;color:#fff;font-weight:700;padding:12px 10px;font-size:clamp(14px,2vw,20px)}
+.category-bar a:hover{color:rgba(255,255,255,0.85)}
 
 /* Hero */
 .hero{padding:56px 0 28px}
