@@ -54,7 +54,7 @@ main{width:100%;margin:0;padding:0}
 .img-wrapper img{width:100%;height:100%;object-fit:cover}
 
 /* Rotation utilities */
-.rotate-90-cw img{transform:rotate(90deg);transform-origin:center;object-position:60% 50%}
+.rotate-90-cw img{transform:rotate(-90deg);transform-origin:center;object-position:60% 50%}
 
 /* Image positioning utilities */
 .img-center img{object-position:center}
