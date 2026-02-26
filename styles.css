@@ -63,14 +63,24 @@ main{width:100%;margin:0;padding:0}
 .thumb img{width:100%;height:auto;display:block;object-fit:cover}
 .thumb-label{padding:10px 6px;font-weight:700;color:var(--text)}
 
-@media(max-width:600px){
+/* Tablet: 2-column layout */
+@media(max-width:1199px) and (min-width:769px){
+  .grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto auto auto}
+  .tile--left-full{grid-column:1 / span 1;grid-row:1 / span 2}
+  .tile--right-top{grid-column:2;grid-row:1}
+  .tile--right-bottom-left{grid-column:2;grid-row:2}
+  .tile--right-bottom-right{grid-column:2;grid-row:3}
+}
+
+/* Mobile: single column stack */
+@media(max-width:768px){
   .portfolio{height:auto}
   .grid{grid-template-columns:1fr;grid-template-rows:auto;height:auto}
   .tile--left-full{grid-column:1;grid-row:auto}
   .tile--right-top{grid-column:1;grid-row:auto}
   .tile--right-bottom-left{grid-column:1;grid-row:auto}
   .tile--right-bottom-right{grid-column:1;grid-row:auto}
-  .category-bar{font-size:16px;padding:10px 6px}
+  .category-bar{font-size:clamp(12px,1.5vw,16px);padding:10px 6px}
 }
 
 /* dark adjustments */
