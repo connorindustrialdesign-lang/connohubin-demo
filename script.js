@@ -17,40 +17,6 @@ function scrollToSection(id) {
   el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme') || 'dark';
-  const next = current === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  try {
-    localStorage.setItem('theme', next);
-  } catch {
-    // ignore storage errors
-  }
-  updateThemeToggleIcon(next);
-}
-
-function initThemeFromPreference() {
-  let stored;
-  try {
-    stored = localStorage.getItem('theme');
-  } catch {
-    stored = null;
-  }
-
-  const prefersDark = window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  const theme = stored || (prefersDark ? 'dark' : 'light');
-  document.documentElement.setAttribute('data-theme', theme);
-  updateThemeToggleIcon(theme);
-}
-
-function updateThemeToggleIcon(theme) {
-  const btn = document.getElementById('themeToggle');
-  if (!btn) return;
-  btn.textContent = theme === 'dark' ? '🌙' : '☀️';
-}
-
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
@@ -99,14 +65,8 @@ function initYear() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  initThemeFromPreference();
   setActiveNavLink();
   initContactForm();
   initYear();
-
-  const toggleBtn = document.getElementById('themeToggle');
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', toggleTheme);
-  }
 });
 
