@@ -23,11 +23,16 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetic
 /* Header */
 .site-header{background:transparent;padding:20px 0}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
-.site-name{font-weight:700;letter-spacing:0.02em;font-size:1rem}
+.site-name{font-weight:900;letter-spacing:0.02em;font-size:clamp(28px,6vw,96px);margin:0}
 .main-nav,.nav{display:flex;gap:20px;align-items:center}
 .main-nav a,.nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:6px 4px}
 .main-nav a:hover,.nav a:hover{color:var(--text)}
 .theme-toggle{background:transparent;border:0;font-size:18px;cursor:pointer;padding:6px;border-radius:6px}
+
+/* Full-width category bar beneath header */
+.category-bar{width:100%;display:flex;justify-content:space-around;align-items:center;padding:14px 0;border-top:0;border-bottom:1px solid rgba(0,0,0,0.04);gap:0;background:transparent}
+.category-bar a{flex:1;text-align:center;text-decoration:none;color:var(--muted);font-weight:700;padding:6px 10px;font-size:clamp(14px,2vw,20px)}
+.category-bar a:hover{color:var(--text)}
 
 /* Hero */
 .hero{padding:56px 0 28px}
@@ -60,6 +65,7 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetic
   .tile--large{grid-column:1 / span 6;grid-row:span 4}
   .tile--medium{grid-column:span 3}
   .tile--small{grid-column:span 2}
+  .category-bar{font-size:16px;padding:10px 6px}
 }
 
 /* dark adjustments */
