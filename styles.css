@@ -63,7 +63,7 @@ main{width:100%;margin:0;padding:0}
 .thumb img{width:100%;height:auto;display:block;object-fit:cover}
 .thumb-label{padding:10px 6px;font-weight:700;color:var(--text)}
 
-@media(max-width:900px){
+@media(max-width:600px){
   .portfolio{height:auto}
   .grid{grid-template-columns:1fr;grid-template-rows:auto;height:auto}
   .tile--left-full{grid-column:1;grid-row:auto}
