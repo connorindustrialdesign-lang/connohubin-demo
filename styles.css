@@ -40,9 +40,12 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetic
 .category-bar a{flex:1;text-align:center;text-decoration:none;color:#fff;font-weight:700;padding:0 10px;font-size:clamp(14px,2vw,20px);line-height:var(--nav-height)}
 .category-bar a:hover{color:rgba(255,255,255,0.9)}
 
+/* Main wrapper */
+main{width:100%;margin:0;padding:0}
+
 /* Portfolio even-spaced grid layout */
-.portfolio{padding:0;margin:0;width:100%;height:calc(100vh - var(--nav-height));overflow:hidden}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:var(--gap);padding:var(--gap);width:100%;height:100%;box-sizing:border-box}
+.portfolio{padding:0;margin:0;width:100%;height:calc(100vh - var(--nav-height));overflow:hidden;display:flex;flex-direction:column}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);grid-auto-rows:1fr;gap:var(--gap);padding:var(--gap);width:100%;height:100%;flex:1;box-sizing:border-box}
 .tile{position:relative;display:block;width:100%;height:100%;overflow:hidden;border-radius:6px;background:var(--card);text-decoration:none;color:inherit;box-shadow:0 8px 30px rgba(2,6,23,0.06);transition:transform .18s ease,box-shadow .18s ease}
 .tile img{width:100%;height:100%;object-fit:cover;display:block}
 .tile-label{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,0.9);padding:8px 10px;border-radius:6px;font-weight:700}
