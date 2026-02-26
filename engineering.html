@@ -49,9 +49,10 @@
     <script>
     (function(){
       const colors=['#e11a1a','#ffd400','#0066ff'];
-      let idx=0;
-      function applyNext(el){ el.style.color = colors[idx]; idx=(idx+1)%colors.length; }
-      function reset(el){ el.style.color = ''; }
+      function getIdx(){ try{ return parseInt(localStorage.getItem('colorIdx')||'0',10); }catch{ return 0; } }
+      function setIdx(i){ try{ localStorage.setItem('colorIdx',i.toString()); }catch{} }
+      function applyNext(el){ const idx=getIdx(); el.style.color=colors[idx]; setIdx((idx+1)%colors.length); }
+      function reset(el){ el.style.color=''; }
       document.addEventListener('DOMContentLoaded', () => {
         const link = document.querySelector('.site-name a');
         if(!link) return;
