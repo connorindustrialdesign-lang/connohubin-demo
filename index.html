@@ -9,7 +9,7 @@
   <body data-page="home">
     <header class="site-header">
       <div class="header-inner container">
-        <h1 class="site-name">Connor Hubin</h1>
+        <h1 class="site-name"><a href="index.html">Connor Hubin</a></h1>
         <div class="header-right">
           <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
         </div>
@@ -75,6 +75,22 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    (function(){
+      const colors=['#e11a1a','#ffd400','#0066ff'];
+      function applyRandom(el){ el.style.color = colors[Math.floor(Math.random()*colors.length)]; }
+      function reset(el){ el.style.color = ''; }
+      document.addEventListener('DOMContentLoaded', () => {
+        const link = document.querySelector('.site-name a');
+        if(!link) return;
+        link.style.cursor='pointer';
+        link.addEventListener('mouseenter', ()=> applyRandom(link));
+        link.addEventListener('focus', ()=> applyRandom(link));
+        link.addEventListener('mouseleave', ()=> reset(link));
+        link.addEventListener('blur', ()=> reset(link));
+      });
+    })();
+    </script>
   </body>
 </html>
 

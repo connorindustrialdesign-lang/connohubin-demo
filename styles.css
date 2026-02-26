@@ -24,8 +24,10 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetic
 
 /* Header */
 .site-header{background:transparent;padding:20px 0}
-.header-inner{display:flex;align-items:center;justify-content:space-between}
+..header-inner{display:flex;align-items:center;justify-content:space-between}
 .site-name{font-weight:900;letter-spacing:0.02em;font-size:clamp(28px,6vw,96px);margin:0}
+.site-name a{color:var(--text);text-decoration:none;transition:color .18s ease;}
+.site-name a:focus{outline:2px solid rgba(0,0,0,0.08);outline-offset:4px}
 .main-nav,.nav{display:flex;gap:20px;align-items:center}
 .main-nav a,.nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:6px 4px}
 .main-nav a:hover,.nav a:hover{color:var(--text)}
