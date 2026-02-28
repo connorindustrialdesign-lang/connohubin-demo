@@ -42,26 +42,7 @@
         }
 
         .gallery-item.highlight {
-            grid-column: span 2;
-            border: 3px solid rgba(255, 212, 0, 0.6);
-            box-shadow: 0 0 30px rgba(255, 212, 0, 0.4);
-            position: relative;
-        }
-
-        .gallery-item.highlight::after {
-            content: '✦ Concept Sketches ✦';
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: #ffd400;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            grid-column: 1 / -1;
         }
 
         .project-header {
@@ -185,20 +166,22 @@
             <img src="assets/images/project B/sobri 10.jpg?v=20260227-1" alt="Sobri 10">
         </div>
 
-        <!-- Full-width image -->
-        <div class="gallery-item full-width">
+        <!-- Shrunk image (was full-width) -->
+        <div class="gallery-item">
             <img src="assets/images/project B/sobri 12.jpg?v=20260227-1" alt="Sobri 12">
         </div>
 
-        <!-- 3 images with HIGHLIGHT on middle -->
+        <!-- 2 images -->
         <div class="gallery-item">
             <img src="assets/images/project B/sobri 15.jpg?v=20260227-1" alt="Sobri 15">
         </div>
-        <div class="gallery-item highlight">
-            <img src="assets/images/project B/sobri 14.jpg?v=20260227-1" alt="Sobri 14 - Concept Sketches">
-        </div>
         <div class="gallery-item">
             <img src="assets/images/project B/sobri 16.jpg?v=20260227-1" alt="Sobri 16">
+        </div>
+
+        <!-- Full-width Concept Sketches -->
+        <div class="gallery-item full-width highlight">
+            <img src="assets/images/project B/sobri 14.jpg?v=20260227-1" alt="Sobri 14 - Concept Sketches">
         </div>
 
         <!-- 2 images -->
