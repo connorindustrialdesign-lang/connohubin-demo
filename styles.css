@@ -56,7 +56,7 @@ main{width:100%;margin:0;padding:0}
 
 /* Rotation utilities */
 .rotate-90-cw img{transform:rotate(90deg);transform-origin:center;object-position:50% 52%}
-.rotate-270 img{transform:rotate(0deg);transform-origin:center;object-position:38% 17%}
+.rotate-270 img{transform:rotate(0deg);transform-origin:center;object-position:35% 17%}
 
 /* Image positioning utilities */
 .img-center img{object-position:center}
@@ -71,7 +71,7 @@ main{width:100%;margin:0;padding:0}
 .img-fill img{object-fit:fill}
 .img-scale-up img{object-fit:cover;transform:scale(1.2)}
 .img-scale-15 img{object-fit:cover;transform:scale(1.05);object-position:50% 73%}
-.scale-and-position-b img{object-fit:cover;transform:scale(1.05) translateY(25px)}
+.scale-and-position-b img{object-fit:cover;transform:scale(1.0) translateY(25px)}
 .img-scale-down img{object-fit:cover;transform:scale(0.8)}
 
 .tile-label{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,0.9);padding:8px 10px;border-radius:6px;font-weight:700}
