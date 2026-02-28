@@ -51,6 +51,7 @@ main{width:100%;margin:0;padding:0}
 
 /* Image wrapper for rotation control */
 .img-wrapper{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden}
+.rotate-270{overflow:visible}
 .img-wrapper img{width:100%;height:100%;object-fit:cover}
 
 /* Rotation utilities */
