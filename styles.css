@@ -55,7 +55,7 @@ main{width:100%;margin:0;padding:0}
 
 /* Rotation utilities */
 .rotate-90-cw img{transform:rotate(90deg);transform-origin:center;object-position:50% 52%}
-.rotate-270 img{transform:rotate(0deg) translateY(50px);transform-origin:center}
+.rotate-270 img{transform:rotate(0deg) translateY(70px);transform-origin:center}
 
 /* Image positioning utilities */
 .img-center img{object-position:center}
