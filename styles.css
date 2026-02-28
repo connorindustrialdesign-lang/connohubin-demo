@@ -78,7 +78,7 @@ main{width:100%;margin:0;padding:0}
 
 .tile--left-full{grid-column:1 / span 2;grid-row:1 / span 2}
 .tile--right-top{grid-column:3 / span 2;grid-row:1}
-.tile--right-bottom-left{grid-column:3;grid-row:2;aspect-ratio:1 / 1;height:auto}
+.tile--right-bottom-left{grid-column:3;grid-row:2;aspect-ratio:1 / 1;height:auto;overflow:visible}
 .tile--right-bottom-right{grid-column:4;grid-row:2;aspect-ratio:1 / 1;height:auto}
 .tile--bottom-left{grid-column:1;grid-row:3}
 .tile--bottom-mid-left{grid-column:2;grid-row:3}
