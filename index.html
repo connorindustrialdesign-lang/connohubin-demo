@@ -55,6 +55,26 @@
         padding-bottom: 20px;
       }
       
+      .projects-button {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 14px 32px;
+        background: #1a1a1a;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        border-radius: 8px;
+        transition: background 0.3s ease, transform 0.2s ease;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .projects-button:hover {
+        background: #333;
+        transform: translateY(-2px);
+      }
+      
       @media (max-width: 1024px) {
         .hero-project-wrapper {
           grid-template-columns: 1fr;
@@ -112,6 +132,7 @@
           </div>
           <div class="hero-project-text">
             CTE Pack
+            <a href="industrial-design.html" class="projects-button">Projects</a>
           </div>
         </div>
       </section>
