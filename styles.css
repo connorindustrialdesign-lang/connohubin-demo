@@ -42,7 +42,7 @@ body{margin:0;font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;fon
 .main-nav a:hover,.nav a:hover{color:var(--text)}
 
 /* Full-width category bar beneath header */
-.category-bar{position:fixed;top:64px;left:0;right:0;width:100%;display:flex;justify-content:space-between;align-items:center;height:var(--nav-height);background:#000;z-index:999}
+.category-bar{position:fixed;top:64px;left:0;right:0;width:100%;display:flex;justify-content:space-between;align-items:center;height:var(--nav-height);background:#000;z-index:1002}
 .category-bar-content{display:flex;align-items:stretch;width:100%;height:100%}
 .category-bar a{flex:1;text-align:center;text-decoration:none;color:#fff;font-weight:400;padding:0 10px;font-size:clamp(16px,2.5vw,24px);line-height:var(--nav-height);position:relative;transition:color 0.2s, border-color 0.2s;font-family:'Space Grotesk',sans-serif}
 .category-bar a:hover{color:rgba(255,255,255,0.82)}
