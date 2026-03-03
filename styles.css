@@ -44,9 +44,13 @@ body{margin:0;font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;fon
 /* Full-width category bar beneath header */
 .category-bar{position:sticky;top:0;left:0;right:0;width:100%;display:flex;justify-content:space-between;align-items:center;height:var(--nav-height);background:#000;z-index:999}
 .category-bar-content{display:flex;align-items:stretch;width:100%;height:100%}
-.category-bar a{flex:1;text-align:center;text-decoration:none;color:#fff;font-weight:400;padding:0 10px;font-size:clamp(16px,2.5vw,24px);line-height:var(--nav-height);position:relative;transition:color 0.2s;font-family:'Space Grotesk',sans-serif}
+.category-bar a{flex:1;text-align:center;text-decoration:none;color:#fff;font-weight:400;padding:0 10px;font-size:clamp(16px,2.5vw,24px);line-height:var(--nav-height);position:relative;transition:color 0.2s, border-color 0.2s;font-family:'Space Grotesk',sans-serif}
 .category-bar a:hover{color:rgba(255,255,255,0.82)}
-.category-bar a.active{border-bottom:3px solid}
+.category-bar a.active{border-bottom:3px solid #fff}
+.category-bar a[data-category="industrial-design"].active{border-bottom-color:#8b5cf6}
+.category-bar a[data-category="engineering"].active{border-bottom-color:#3b82f6}
+.category-bar a[data-category="fabrication"].active{border-bottom-color:#ef4444}
+.category-bar a[data-category="fine-arts"].active{border-bottom-color:#ec4899}
 .category-bar a[href="index.html"]:hover{color:#fff}
 .category-bar a[href="about.html"]:hover{color:#fff}
 .category-bar a[href="contact.html"]:hover{color:#fff}

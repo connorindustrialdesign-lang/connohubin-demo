@@ -25,6 +25,11 @@ function setActiveCategoryLink() {
 
   let resolvedCategoryPage = pageName;
   
+  // portfolio-wheel has its own scroll detection, skip
+  if (pageName === 'portfolio-wheel') {
+    return;
+  }
+  
   if (pageName.startsWith('project-')) {
     resolvedCategoryPage = 'industrial-design';
   } else if (pageName.startsWith('fabrication')) {
@@ -38,8 +43,8 @@ function setActiveCategoryLink() {
   const categoryLinks = document.querySelectorAll('.category-bar a');
   categoryLinks.forEach((link) => {
     const href = link.getAttribute('href');
-    const hrefName = href.toLowerCase().replace('.html', '');
-    if (hrefName === resolvedCategoryPage) {
+    const hrefName = href.toLowerCase().replace('.html', '').replace('#', '-');
+    if (hrefName.includes(resolvedCategoryPage)) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
