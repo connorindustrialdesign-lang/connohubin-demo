@@ -5,51 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Industrial Design — Connor Hubin</title>
     <link rel="stylesheet" href="styles.css?v=20260227-49">
-    <style>
-      /* Custom grid for industrial design page - compact 2-row layout */
-      [data-page="industrial-design"] .grid {
-        grid-template-rows: 1fr 1fr;
-      }
-      
-      /* Project A: L-shaped (top-left area, doesn't extend to bottom-right) */
-      [data-page="industrial-design"] .tile--left-full {
-        grid-column: 1;
-        grid-row: 1 / span 2;
-      }
-      
-      /* Project F: Square in bottom-left of second column */
-      [data-page="industrial-design"] .tile--left-bottom-right {
-        grid-column: 2;
-        grid-row: 2;
-        aspect-ratio: 1 / 1;
-        height: auto;
-      }
-      
-      /* Project B extends across top of columns 2-4 */
-      [data-page="industrial-design"] .tile--right-top {
-        grid-column: 2 / span 3;
-        grid-row: 1;
-      }
-      
-      @media(max-width:1199px) and (min-width:769px) {
-        [data-page="industrial-design"] .grid {
-          grid-template-columns: repeat(2, 1fr);
-          grid-template-rows: auto auto auto auto;
-        }
-        [data-page="industrial-design"] .tile--left-full {
-          grid-column: 1;
-          grid-row: 1 / span 2;
-        }
-        [data-page="industrial-design"] .tile--left-bottom-right {
-          grid-column: 1;
-          grid-row: 3;
-        }
-        [data-page="industrial-design"] .tile--right-top {
-          grid-column: 2;
-          grid-row: 1;
-        }
-      }
-    </style>
   </head>
   <body data-page="industrial-design">
     <header class="site-header">
@@ -81,10 +36,6 @@
             <img src="assets/images/project-a.jpg" alt="Project A">
           </a>
 
-          <a class="tile tile--left-bottom-right" href="project-f-detail.html">
-            <img src="assets/images/project-f.jpg" alt="Project F">
-          </a>
-
           <a class="tile tile--right-top img-scale-15" href="project-b-detail.html">
             <div class="img-wrapper scale-and-position-b">
               <img src="assets/images/project-b.jpg" alt="Project B">
@@ -99,6 +50,14 @@
 
           <a class="tile tile--right-bottom-right" href="project-d-detail.html">
             <img src="assets/images/project-d.jpg" alt="Project D">
+          </a>
+
+          <a class="tile tile--bottom-mid-left" href="project-f-detail.html">
+            <img src="assets/images/project-f.jpg" alt="Project F">
+          </a>
+
+          <a class="tile tile--bottom-right" href="project-h-detail.html">
+            <img src="https://via.placeholder.com/800x800?text=Project+H" alt="Project H">
           </a>
         </div>
       </section>
