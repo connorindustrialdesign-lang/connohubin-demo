@@ -9,6 +9,8 @@
       body[data-page="portfolio-wheel"] {
         background: #fafaf8;
         padding-top: 128px;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
       }
       
       body[data-page="portfolio-wheel"] .category-bar {
@@ -19,6 +21,7 @@
         width: 100% !important;
         z-index: 10000 !important;
         display: flex !important;
+        pointer-events: auto !important;
       }
       
       body[data-page="portfolio-wheel"] .site-header {
@@ -27,12 +30,25 @@
         left: 0 !important;
         right: 0 !important;
         z-index: 9999 !important;
+        pointer-events: auto !important;
       }
       
       body[data-page="portfolio-wheel"] main {
         min-height: 100vh;
         position: relative;
         z-index: 1;
+        overflow: visible !important;
+      }
+      
+      body[data-page="portfolio-wheel"] .grid {
+        height: auto !important;
+        overflow: visible !important;
+        flex: none !important;
+      }
+      
+      body[data-page="portfolio-wheel"] .portfolio {
+        height: auto !important;
+        overflow: visible !important;
       }
       
       .hero-project {
@@ -41,6 +57,7 @@
         align-items: center;
         justify-content: center;
         padding: 60px 20px 120px;
+        overflow: visible !important;
       }
       
       .hero-project-wrapper {
@@ -51,6 +68,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 80px;
         align-items: end;
+        overflow: visible !important;
       }
       
       .hero-project-image {
@@ -65,7 +83,10 @@
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       }
       
-      .category-section { scroll-margin-top: 128px; }
+      .category-section { 
+        scroll-margin-top: 128px;
+        overflow: visible !important;
+      }
     </style>
   </head>
   <body data-page="portfolio-wheel" style="overflow-x: hidden;">
