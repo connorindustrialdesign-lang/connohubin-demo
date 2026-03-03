@@ -10,6 +10,10 @@
         background: #fafaf8;
       }
       
+      body[data-page="portfolio-wheel"] main {
+        padding-top: 128px;
+      }
+      
       .hero-project {
         min-height: calc(100vh - 300px);
         display: flex;
@@ -40,16 +44,7 @@
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       }
       
-      .category-section { scroll-margin-top: 64px; }
-      .category-section-title {
-        font-size: clamp(28px, 5vw, 52px);
-        font-weight: 900;
-        margin: 60px 0 40px;
-        padding: 0 20px;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
-      }
-      .category-section:first-of-type .category-section-title { margin-top: 0; }
+      .category-section { scroll-margin-top: 128px; }
     </style>
   </head>
   <body data-page="portfolio-wheel">
@@ -122,33 +117,12 @@
           </div>
         </section>
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px 60px;">
-          <div class="cat-grid">
-            <a class="cat-card shope-project" href="shope-concrete-detail.html">
-              <div class="shope-project-content">
-                <img src="assets/images/shope/company/Header-Logo-display.png" srcset="assets/images/shope/company/Header-Logo-display@2x.png 2x" alt="Shope Concrete Products" class="shope-project-logo">
-                <svg class="shope-project-icon" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="10" y1="100" x2="190" y2="100" stroke="#4a4a4a" stroke-width="2.5"/>
-                  <rect x="10" y="100" width="180" height="15" fill="#888" opacity="0.25"/>
-                  <rect x="45" y="75" width="110" height="25" rx="3" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="2"/>
-                  <line x1="60" y1="75" x2="60" y2="100" stroke="#555" stroke-width="1" opacity="0.7"/>
-                  <line x1="80" y1="75" x2="80" y2="100" stroke="#555" stroke-width="1" opacity="0.7"/>
-                  <line x1="100" y1="75" x2="100" y2="100" stroke="#555" stroke-width="1" opacity="0.7"/>
-                  <line x1="120" y1="75" x2="120" y2="100" stroke="#555" stroke-width="1" opacity="0.7"/>
-                  <line x1="140" y1="75" x2="140" y2="100" stroke="#555" stroke-width="1" opacity="0.7"/>
-                  <rect x="55" y="100" width="90" height="130" fill="none" stroke="#3a3a3a" stroke-width="2.5"/>
-                  <rect x="58" y="103" width="84" height="124" fill="#1a1a1a" opacity="0.3"/>
-                  <rect x="30" y="150" width="25" height="18" rx="2" fill="none" stroke="#2a2a2a" stroke-width="2.2"/>
-                  <line x1="30" y1="159" x2="55" y2="159" stroke="#2a2a2a" stroke-width="2"/>
-                  <polygon points="58,220 142,220 100,235" fill="none" stroke="#555" stroke-width="1.5" opacity="0.6"/>
-                  <line x1="60" y1="185" x2="140" y2="185" stroke="#5B8FD4" stroke-width="2" opacity="0.75"/>
-                  <line x1="48" y1="130" x2="52" y2="130" stroke="#666" stroke-width="1" opacity="0.5"/>
-                  <line x1="48" y1="160" x2="52" y2="160" stroke="#666" stroke-width="1" opacity="0.5"/>
-                  <line x1="48" y1="190" x2="52" y2="190" stroke="#666" stroke-width="1" opacity="0.5"/>
-                </svg>
-              </div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px;">
+            <a href="shope-concrete-detail.html" style="grid-column: 1 / -1; border-radius: 12px; min-height: 280px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #eeeeee 0%, #dcdcdc 100%); border: 1px solid #d1d1d1; text-decoration: none; color: inherit; font-weight: 700; font-size: 18px; padding: 20px; text-align: center; transition: all 0.3s ease;">
+              Shope Concrete Products
             </a>
-            <a class="cat-card placeholder design-project" href="engineering-design-1-2-detail.html">
-              <span class="design-project-title">Engineering Design 1 &amp; 2</span>
+            <a href="engineering-design-1-2-detail.html" style="grid-column: 1 / -1; border-radius: 12px; min-height: 280px; display: flex; align-items: center; justify-content: center; background: #f0f0f0; text-decoration: none; color: inherit; font-weight: 700; font-size: 24px; padding: 20px; text-align: center;">
+              Engineering Design 1 &amp; 2
             </a>
           </div>
         </div>
