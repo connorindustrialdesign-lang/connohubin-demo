@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -70,9 +71,11 @@
         grid-template-columns: repeat(4,1fr);
         grid-auto-rows: auto;
         gap: var(--gap);
-        padding: var(--gap);
+        padding: 0 var(--gap);
         flex: none;
         box-sizing: border-box;
+        max-width: 1400px;
+        margin: 0 auto;
       }
 
       .hero-project {
@@ -107,6 +110,7 @@
       
       .category-section { 
         scroll-margin-top: calc(var(--wheel-header-h) + var(--wheel-bar-h) + 12px);
+        padding: 40px 0;
       }
       
       /* Engineering section full-width cards */
@@ -230,7 +234,7 @@
     <main>
       <!-- INDUSTRIAL DESIGN SECTION -->
       <section class="category-section" id="industrial-design" data-category="industrial-design">
-        <section class="portfolio" style="max-width: 1400px; margin: 0 auto; padding: 40px;">
+        <section class="portfolio">
           <div class="grid">
             <a class="tile tile--left-full" href="project-a-detail.html">
               <img src="assets/images/project-a.jpg" alt="Project A">
@@ -261,7 +265,7 @@
 
       <!-- ENGINEERING SECTION - UPDATED LAYOUT -->
       <section class="category-section" id="engineering" data-category="engineering">
-        <section class="portfolio" style="max-width: 1400px; margin: 0 auto; padding: 40px;">
+        <section class="portfolio">
           <div class="grid">
             <a class="tile cat-card shope-project" href="shope-concrete-detail.html" style="grid-column: 1 / -1; aspect-ratio: 4 / 1;">
               <div class="shope-project-content">
@@ -297,7 +301,7 @@
 
       <!-- FABRICATION SECTION -->
       <section class="category-section" id="fabrication" data-category="fabrication">
-        <section class="portfolio" style="max-width: 1400px; margin: 0 auto; padding: 40px;">
+        <section class="portfolio">
           <div class="grid">
             <a class="tile tile--left-full" href="carte-detail.html">
               <img src="assets/images/project-e.jpeg" alt="Carte">
@@ -316,7 +320,7 @@
 
       <!-- FINE ARTS SECTION -->
       <section class="category-section" id="fine-arts" data-category="fine-arts">
-        <section class="portfolio" style="max-width: 1400px; margin: 0 auto; padding: 40px;">
+        <section class="portfolio">
           <div class="grid">
             <a class="tile tile--left-full" href="fine-arts-1-detail.html" style="background: linear-gradient(135deg, #355c7d 0%, #6c5b7b 50%, #c06c84 100%); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .08em; text-decoration: none;">
               Fine Arts Project 1
