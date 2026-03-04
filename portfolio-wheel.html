@@ -389,20 +389,22 @@
         const categoryLinks = document.querySelectorAll('.category-bar [data-category]');
         
         let currentCategory = 'industrial-design';
-        let minDistance = Infinity;
+        let maxVisibleArea = 0;
         
+        // Find the section with the most visible area in viewport
         sections.forEach(section => {
           const rect = section.getBoundingClientRect();
           
-          // Calculate how far the section is from the top of the viewport
-          const distanceFromTop = Math.abs(rect.top);
+          // Calculate visible height of this section
+          const viewportHeight = window.innerHeight;
+          const visibleTop = Math.max(0, rect.top);
+          const visibleBottom = Math.min(viewportHeight, rect.bottom);
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
           
-          // If section is visible (either above or in viewport) and closest to top
-          if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-            if (distanceFromTop < minDistance) {
-              minDistance = distanceFromTop;
-              currentCategory = section.getAttribute('data-category');
-            }
+          // The section with most visible area wins
+          if (visibleHeight > maxVisibleArea) {
+            maxVisibleArea = visibleHeight;
+            currentCategory = section.getAttribute('data-category');
           }
         });
         
