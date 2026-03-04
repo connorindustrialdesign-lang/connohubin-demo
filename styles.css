@@ -46,11 +46,11 @@ body{margin:0;font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;fon
 .category-bar-content{display:flex;align-items:stretch;width:100%;height:100%}
 .category-bar a{flex:1;text-align:center;text-decoration:none;color:#fff;font-weight:400;padding:0 10px;font-size:clamp(16px,2.5vw,24px);line-height:var(--nav-height);position:relative;transition:color 0.2s, border-color 0.2s;font-family:'Space Grotesk',sans-serif}
 .category-bar a:hover{color:rgba(255,255,255,0.82)}
-.category-bar a.active{border-bottom:3px solid #fff}
-.category-bar a[data-category="industrial-design"].active{color:#D4A545;border-bottom-color:#D4A545}
-.category-bar a[data-category="engineering"].active{color:#5B8FD4;border-bottom-color:#5B8FD4}
-.category-bar a[data-category="fabrication"].active{color:#C97171;border-bottom-color:#C97171}
-.category-bar a[data-category="fine-arts"].active{color:#8BAD75;border-bottom-color:#8BAD75}
+.category-bar a.active{border-bottom:5px solid #fff}
+.category-bar a[data-category="industrial-design"].active{color:#D4A545!important;border-bottom-color:#D4A545!important}
+.category-bar a[data-category="engineering"].active{color:#5B8FD4!important;border-bottom-color:#5B8FD4!important}
+.category-bar a[data-category="fabrication"].active{color:#C97171!important;border-bottom-color:#C97171!important}
+.category-bar a[data-category="fine-arts"].active{color:#8BAD75!important;border-bottom-color:#8BAD75!important}
 .category-bar a[href="index.html"]:hover{color:#fff}
 .category-bar a[href="about.html"]:hover{color:#fff}
 .category-bar a[href="contact.html"]:hover{color:#fff}
