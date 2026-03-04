@@ -4,11 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Connor Hubin — Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=74433eb">
+    <link rel="stylesheet" href="styles.css">
     <style>
       body[data-page="home"] {
         background: #fafaf8;
         padding-top: calc(88px + 64px);
+      }
+      
+      .portfolio {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px 60px;
       }
       
       .hero-project {
@@ -127,17 +133,27 @@
     </nav>
 
     <main>
-      <section class="hero-project" aria-label="Featured project">
-        <div class="hero-project-wrapper">
-          <div class="hero-project-image">
-            <a href="project-a-detail.html">
-              <img src="assets/images/project-a-dimmed-bg.jpg" alt="Project A">
-            </a>
-          </div>
-          <div class="hero-project-text">
-            CTE Pack
-            <a href="portfolio-wheel.html?v=430ba9b" class="projects-button">Projects</a>
-          </div>
+      <section class="portfolio" aria-label="Projects">
+        <div class="grid">
+          <a class="tile tile--left-full" href="project-a-detail.html">
+            <img src="assets/images/project-a.jpg" alt="Project A">
+          </a>
+
+          <a class="tile tile--right-top img-scale-15" href="project-b-detail.html">
+            <div class="img-wrapper scale-and-position-b">
+              <img src="assets/images/project-b.jpg" alt="Project B">
+            </div>
+          </a>
+
+          <a class="tile tile--right-bottom-left" href="project-c-detail.html">
+            <div class="img-wrapper rotate-270">
+              <img src="assets/images/project-c.jpeg" alt="Project C" style="object-position: 20% 17% !important;">
+            </div>
+          </a>
+
+          <a class="tile tile--right-bottom-right" href="project-d-detail.html">
+            <img src="assets/images/project-d.jpg" alt="Project D">
+          </a>
         </div>
       </section>
     </main>
