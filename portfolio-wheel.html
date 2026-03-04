@@ -241,6 +241,10 @@
 
     <script src="script.js"></script>
     <script>
+      let wheelUnlocked = false;
+      let lastScrollY = window.scrollY;
+      let isAutoScrolling = false;
+
       function syncWheelOffsets() {
         const header = document.getElementById('wheel-header');
         const bar = document.getElementById('wheel-category-bar');
@@ -291,16 +295,56 @@
           }
         });
       }
+
+      // Wheel cycling behavior
+      function handleWheelCycle() {
+        if (isAutoScrolling) return;
+
+        const currentScrollY = window.scrollY;
+        const scrollingUp = currentScrollY < lastScrollY;
+        
+        // If not unlocked and trying to scroll up, prevent it
+        if (!wheelUnlocked && scrollingUp && currentScrollY > 0) {
+          window.scrollTo(0, lastScrollY);
+          return;
+        }
+
+        // Check if we've reached the bottom of Fine Arts section
+        const fineArtsSection = document.getElementById('fine-arts');
+        if (fineArtsSection) {
+          const rect = fineArtsSection.getBoundingClientRect();
+          const sectionBottom = rect.bottom;
+          const viewportBottom = window.innerHeight;
+          
+          // If we've scrolled past Fine Arts section (with some buffer)
+          if (sectionBottom <= viewportBottom + 100) {
+            // Jump back to top
+            isAutoScrolling = true;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Unlock the wheel after first complete cycle
+            wheelUnlocked = true;
+            
+            setTimeout(() => {
+              isAutoScrolling = false;
+            }, 1000);
+          }
+        }
+
+        lastScrollY = currentScrollY;
+      }
       
       window.addEventListener('scroll', () => {
         syncWheelOffsets();
         updateCategoryBar();
+        handleWheelCycle();
       });
       window.addEventListener('resize', syncWheelOffsets);
       window.addEventListener('load', syncWheelOffsets);
       document.addEventListener('DOMContentLoaded', () => {
         syncWheelOffsets();
         updateCategoryBar();
+        lastScrollY = window.scrollY;
       });
     </script>
   </body>
