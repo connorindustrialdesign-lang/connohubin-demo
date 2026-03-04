@@ -385,13 +385,12 @@
         const categoryLinks = document.querySelectorAll('.category-bar [data-category]');
         
         let currentCategory = 'industrial-design';
-        const headerOffset = 152; // header (88px) + category bar (64px)
+        const scrollOffset = 200; // Pixels from top to trigger section change
         
-        // Find which section we're currently in
+        // Find the last section whose top has passed the scroll offset
         sections.forEach(section => {
           const rect = section.getBoundingClientRect();
-          // If section top is above the threshold and bottom is below it, we're in this section
-          if (rect.top <= headerOffset && rect.bottom > headerOffset) {
+          if (rect.top <= scrollOffset) {
             currentCategory = section.getAttribute('data-category');
           }
         });
