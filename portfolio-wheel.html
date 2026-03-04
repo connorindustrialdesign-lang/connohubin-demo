@@ -37,8 +37,18 @@
         z-index: 2999;
       }
 
+      body[data-page="portfolio-wheel"] {
+        height: auto;
+        overflow-y: auto;
+      }
+
       body[data-page="portfolio-wheel"] main {
         min-height: 100vh;
+      }
+
+      body[data-page="portfolio-wheel"] .portfolio {
+        height: auto;
+        overflow: visible;
       }
 
       body[data-page="portfolio-wheel"] .grid {
