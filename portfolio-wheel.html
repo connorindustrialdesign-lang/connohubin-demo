@@ -389,16 +389,20 @@
         const categoryLinks = document.querySelectorAll('.category-bar [data-category]');
         
         let currentCategory = 'industrial-design';
-        let closestDistance = Infinity;
+        let minDistance = Infinity;
         
         sections.forEach(section => {
           const rect = section.getBoundingClientRect();
-          const distance = Math.abs(rect.top);
           
-          // Find the section closest to the top of the viewport
-          if (distance < closestDistance && rect.top < window.innerHeight / 2) {
-            closestDistance = distance;
-            currentCategory = section.getAttribute('data-category');
+          // Calculate how far the section is from the top of the viewport
+          const distanceFromTop = Math.abs(rect.top);
+          
+          // If section is visible (either above or in viewport) and closest to top
+          if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            if (distanceFromTop < minDistance) {
+              minDistance = distanceFromTop;
+              currentCategory = section.getAttribute('data-category');
+            }
           }
         });
         
