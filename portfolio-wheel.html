@@ -399,10 +399,15 @@
           }
         });
         
+        // Debug logging
+        console.log('Current category:', currentCategory);
+        
         categoryLinks.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('data-category') === currentCategory) {
+          const linkCategory = link.getAttribute('data-category');
+          if (linkCategory === currentCategory) {
             link.classList.add('active');
+            console.log('Added active to:', linkCategory);
           }
         });
       }
