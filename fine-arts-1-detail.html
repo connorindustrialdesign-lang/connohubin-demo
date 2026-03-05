@@ -67,6 +67,32 @@
             display: none;
         }
 
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .painting-gallery {
+                padding: 100px 30px;
+                min-height: auto;
+            }
+
+            .painting-container {
+                padding: 50px;
+                max-width: 500px;
+            }
+
+            .painting-image {
+                aspect-ratio: 0.9;
+            }
+
+            .gallery-label h2 {
+                font-size: 22px;
+            }
+
+            .gallery-label p {
+                font-size: 14px;
+            }
+        }
+
+        /* Mobile */
         @media (max-width: 768px) {
             .painting-gallery {
                 padding: 80px 20px;
@@ -79,6 +105,39 @@
 
             .gallery-label h2 {
                 font-size: 20px;
+            }
+
+            .gallery-label p {
+                font-size: 13px;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 480px) {
+            .painting-gallery {
+                padding: 60px 16px;
+            }
+
+            .painting-container {
+                padding: 24px;
+            }
+
+            .painting-image {
+                aspect-ratio: 0.85;
+            }
+
+            .gallery-label {
+                margin-top: 24px;
+            }
+
+            .gallery-label h2 {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+
+            .gallery-label p {
+                font-size: 12px;
+                line-height: 1.5;
             }
         }
     </style>

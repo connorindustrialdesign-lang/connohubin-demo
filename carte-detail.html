@@ -118,6 +118,31 @@
             margin-bottom: 0;
         }
 
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .project-hero-image {
+                height: 400px;
+                margin-bottom: 80px;
+            }
+
+            .project-title-block {
+                margin-bottom: 100px;
+                padding: 0 30px;
+            }
+
+            .project-title-block h1 {
+                font-size: 48px;
+            }
+
+            .project-content {
+                padding: 0 30px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+        }
+
         /* Mobile */
         @media (max-width: 768px) {
             .project-hero-image {
@@ -134,16 +159,73 @@
                 font-size: 36px;
             }
 
+            .project-title-block p {
+                font-size: 16px;
+            }
+
             .project-content {
                 padding: 0 20px;
             }
 
             .section-header h2 {
-                font-size: 28px;
+                font-size: 26px;
+                margin-bottom: 20px;
             }
 
             .section-text {
-                padding: 30px;
+                padding: 24px;
+            }
+
+            .section-text p {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 480px) {
+            .project-hero-image {
+                height: 240px;
+                margin-bottom: 50px;
+                margin-top: 0;
+            }
+
+            .project-title-block {
+                margin-bottom: 60px;
+                padding: 0 16px;
+            }
+
+            .project-title-block h1 {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+
+            .project-title-block p {
+                font-size: 14px;
+            }
+
+            .project-content {
+                padding: 0 16px;
+            }
+
+            .section-header {
+                margin-bottom: 24px;
+            }
+
+            .section-header h2 {
+                font-size: 22px;
+                margin-bottom: 16px;
+            }
+
+            .section-text {
+                padding: 16px;
+                margin-bottom: 20px;
+            }
+
+            .section-text p {
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 12px;
             }
         }
     </style>

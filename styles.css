@@ -10,6 +10,25 @@
   --spacer:28px;
   --nav-height:64px;
   --maxw:1200px;
+  
+  /* Unified Responsive Breakpoints */
+  --bp-mobile: 480px;      /* Small phones */
+  --bp-tablet: 768px;      /* Tablets & medium devices */
+  --bp-desktop: 1024px;    /* Desktop & larger tablets */
+  --bp-wide: 1200px;       /* Large desktop */
+  
+  /* Responsive Spacing */
+  --gap-lg: 32px;    /* Desktop gap */
+  --gap-md: 24px;    /* Tablet gap */
+  --gap-sm: 16px;    /* Mobile gap */
+  --pad-lg: 40px;    /* Desktop padding */
+  --pad-md: 30px;    /* Tablet padding */
+  --pad-sm: 20px;    /* Mobile padding */
+  
+  /* Typography Scale */
+  --h1-lg: clamp(36px, 8vw, 72px);   /* Desktop: 72px */
+  --h1-md: clamp(28px, 6vw, 48px);   /* Tablet: 48px */
+  --h1-sm: clamp(24px, 5vw, 36px);   /* Mobile: 36px */
 }
 
 [data-theme='dark']{
@@ -128,8 +147,8 @@ main{width:100%;margin:0;padding:0}
 .thumb-label{padding:10px 6px;font-weight:700;color:var(--text)}
 
 /* Tablet: 2-column layout */
-@media(max-width:1199px) and (min-width:769px){
-  .grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto auto auto auto auto}
+@media(max-width:1023px) and (min-width:769px){
+  .grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto auto auto auto auto;gap:var(--gap-md)}
   .tile--left-full{grid-column:1 / span 1;grid-row:1 / span 2}
   .tile--right-top{grid-column:2;grid-row:1}
   .tile--right-bottom-left{grid-column:2;grid-row:2}
@@ -143,7 +162,7 @@ main{width:100%;margin:0;padding:0}
 /* Mobile: single column stack */
 @media(max-width:768px){
   .portfolio{height:auto}
-  .grid{grid-template-columns:1fr;grid-template-rows:auto;height:auto}
+  .grid{grid-template-columns:1fr;grid-template-rows:auto;height:auto;gap:var(--gap-sm);padding:var(--pad-sm)}
   .tile--left-full{grid-column:1;grid-row:auto}
   .tile--right-top{grid-column:1;grid-row:auto}
   .tile--right-bottom-left{grid-column:1;grid-row:auto}
