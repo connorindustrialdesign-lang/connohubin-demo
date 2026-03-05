@@ -383,63 +383,61 @@
         document.documentElement.style.setProperty('--wheel-bar-h', `${barHeight}px`);
       }
 
-      // Scroll detection for category bar highlighting
-      function updateCategoryBar() {
-        const sections = document.querySelectorAll('section.category-section[data-category]');
+      // Scroll detection for category bar highlighting using Intersection Observer
+      function initCategoryHighlighting() {
         const categoryLinks = document.querySelectorAll('.category-bar [data-category]');
-        
         let currentCategory = 'industrial-design';
-        const scrollOffset = 200; // Pixels from top to trigger section change
         
-        // Find the last section whose top has passed the scroll offset
-        sections.forEach(section => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= scrollOffset) {
-            currentCategory = section.getAttribute('data-category');
-          }
-        });
+        const options = {
+          root: null,
+          rootMargin: '-40% 0px -40% 0px',
+          threshold: 0
+        };
         
-        // Debug logging
-        console.log('Current category:', currentCategory);
-        console.log('Sections found:', sections.length);
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              currentCategory = entry.target.getAttribute('data-category');
+              console.log('Intersection detected:', currentCategory);
+              
+              categoryLinks.forEach(link => {
+                link.classList.remove('active');
+              });
+              
+              const activeLink = document.querySelector(`.category-bar [data-category="${currentCategory}"]`);
+              if (activeLink) {
+                activeLink.classList.add('active');
+                console.log('Activated link:', currentCategory);
+              }
+            }
+          });
+        }, options);
         
-        categoryLinks.forEach(link => {
-          link.classList.remove('active');
-          const linkCategory = link.getAttribute('data-category');
-          if (linkCategory === currentCategory) {
-            link.classList.add('active');
-            console.log('Added active to:', linkCategory);
-          }
-        });
+        const sections = document.querySelectorAll('section.category-section[data-category]');
+        sections.forEach(section => observer.observe(section));
       }
       
       // Scroll to hash anchor on page load
       function scrollToHash() {
-        const hash = window.location.hash.slice(1); // Remove the # character
+        const hash = window.location.hash.slice(1);
         if (!hash) return;
         
         const section = document.getElementById(hash);
         if (!section) return;
         
-        // Use setTimeout to ensure layout is complete before scrolling
         setTimeout(() => {
           section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          updateCategoryBar();
         }, 100);
       }
       
-      window.addEventListener('scroll', () => {
+      document.addEventListener('DOMContentLoaded', () => {
+        initCategoryHighlighting();
+        scrollToHash();
         syncWheelOffsets();
-        updateCategoryBar();
       });
       window.addEventListener('resize', syncWheelOffsets);
       window.addEventListener('load', syncWheelOffsets);
-      document.addEventListener('DOMContentLoaded', () => {
-        syncWheelOffsets();
-        updateCategoryBar();
-        scrollToHash();
-      });
-      // Also handle hash changes if user clicks category links
+      window.addEventListener('scroll', syncWheelOffsets);
       window.addEventListener('hashchange', scrollToHash);
     </script>
   </body>
