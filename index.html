@@ -32,32 +32,34 @@
         display: grid;
         grid-template-columns: 1.2fr 1fr;
         gap: 80px;
-        align-items: flex-start;
+        align-items: start;
       }
       
       .hero-project-text-button {
-        display: grid;
-        grid-template-rows: auto 1fr auto;
+        display: flex;
+        flex-direction: column;
         width: 100%;
       }
       
       .hero-project-text {
-        grid-row: 1;
-        grid-column: 1;
+        flex: 0 0 auto;
       }
       
       .gallery-caption {
-        grid-row: 2;
-        grid-column: 1;
-        align-self: end;
+        font-size: 18px;
+        color: #444;
+        line-height: 1.6;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        max-width: 280px;
+        margin-top: auto;
+        margin-bottom: 0;
       }
       
       .hero-project-button-col {
         display: flex;
         align-items: flex-start;
         justify-content: flex-end;
-        grid-row: 3;
-        grid-column: 1;
         margin-top: 16px;
       }
       
@@ -90,17 +92,7 @@
         flex-direction: column;
       }
       
-      .gallery-caption {
-        font-size: 18px;
-        color: #444;
-        margin-top: 16px;
-        margin-bottom: 0;
-        line-height: 1.6;
-        font-weight: 700;
-        letter-spacing: 1.2px;
-        max-width: 280px;
-      }
-      
+
       .projects-button {
         display: inline-flex;
         align-items: center;
