@@ -8,51 +8,54 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .painting-gallery {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 80vh;
-            padding: 120px 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            padding: 80px 40px;
             background: #fafaf8;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .painting-frame {
+        .gallery-item {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .painting-container {
-            background: white;
-            padding: 60px;
-            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.15);
-            max-width: 700px;
-            width: 100%;
+        .gallery-item:hover {
+            transform: translateY(-8px);
         }
 
-        .painting-image {
+        .gallery-item-image {
             width: 100%;
             height: auto;
             display: block;
-            background: linear-gradient(135deg, #355c7d 0%, #6c5b7b 50%, #c06c84 100%);
             aspect-ratio: 1;
-            border-radius: 4px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
         }
 
-        .gallery-label {
-            margin-top: 40px;
+        .gallery-item:hover .gallery-item-image {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item-label {
+            margin-top: 20px;
             text-align: center;
-            max-width: 600px;
         }
 
-        .gallery-label h2 {
-            font-size: 24px;
-            margin: 0 0 8px 0;
+        .gallery-item-label h3 {
+            font-size: 18px;
+            margin: 0 0 6px 0;
             font-weight: 700;
             color: #1a1a1a;
         }
 
-        .gallery-label p {
+        .gallery-item-label p {
             font-size: 14px;
             color: #666;
             line-height: 1.6;
@@ -67,77 +70,181 @@
             display: none;
         }
 
+        /* Gallery Modal */
+        .gallery-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-modal.is-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .gallery-modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            cursor: pointer;
+        }
+
+        .gallery-modal-content {
+            position: relative;
+            z-index: 2001;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 90vw;
+            max-height: 90vh;
+            background: none;
+        }
+
+        .gallery-modal-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 0;
+        }
+
+        .gallery-modal-back {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            z-index: 2002;
+        }
+
+        .gallery-modal-back:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .gallery-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 44px;
+            height: 44px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 32px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 2002;
+        }
+
+        .gallery-modal-close:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
         /* Tablet */
         @media (max-width: 1024px) {
             .painting-gallery {
-                padding: 100px 30px;
-                min-height: auto;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+                padding: 60px 30px;
             }
 
-            .painting-container {
-                padding: 50px;
-                max-width: 500px;
+            .gallery-item-label h3 {
+                font-size: 16px;
             }
 
-            .painting-image {
-                aspect-ratio: 0.9;
-            }
-
-            .gallery-label h2 {
-                font-size: 22px;
-            }
-
-            .gallery-label p {
-                font-size: 14px;
+            .gallery-item-label p {
+                font-size: 13px;
             }
         }
 
         /* Mobile */
         @media (max-width: 768px) {
             .painting-gallery {
-                padding: 80px 20px;
-                min-height: auto;
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 60px 20px;
             }
 
-            .painting-container {
-                padding: 40px;
-            }
-
-            .gallery-label h2 {
-                font-size: 20px;
-            }
-
-            .gallery-label p {
+            .gallery-modal-back {
+                top: 16px;
+                left: 16px;
+                padding: 10px 16px;
                 font-size: 13px;
+            }
+
+            .gallery-modal-close {
+                top: 16px;
+                right: 16px;
+            }
+
+            .gallery-item-label h3 {
+                font-size: 16px;
+            }
+
+            .gallery-item-label p {
+                font-size: 12px;
             }
         }
 
         /* Small phones */
         @media (max-width: 480px) {
             .painting-gallery {
+                grid-template-columns: 1fr;
+                gap: 16px;
                 padding: 60px 16px;
             }
 
-            .painting-container {
-                padding: 24px;
-            }
-
-            .painting-image {
-                aspect-ratio: 0.85;
-            }
-
-            .gallery-label {
-                margin-top: 24px;
-            }
-
-            .gallery-label h2 {
-                font-size: 18px;
-                margin-bottom: 8px;
-            }
-
-            .gallery-label p {
+            .gallery-modal-back {
+                top: 12px;
+                left: 12px;
+                padding: 8px 12px;
                 font-size: 12px;
-                line-height: 1.5;
+            }
+
+            .gallery-modal-close {
+                top: 12px;
+                right: 12px;
+                width: 40px;
+                height: 40px;
+                font-size: 28px;
+            }
+
+            .gallery-item-label h3 {
+                font-size: 14px;
+            }
+
+            .gallery-item-label p {
+                font-size: 11px;
             }
         }
     </style>
@@ -170,85 +277,23 @@
         <p>Three-dimensional sculptural works</p>
     </div>
 
-    <div class="painting-gallery">
-        <div class="painting-frame">
-            <div class="painting-container">
-                <img class="painting-image" src="assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.30.54%20PM.png" alt="Sculpture 1">
-            </div>
-            <div class="gallery-label">
-                <h2>Sculpture 1</h2>
-                <p>Three-dimensional form and space</p>
-            </div>
-        </div>
+    <div class="painting-gallery" id="painting-gallery">
+        <!-- Gallery items will be generated by JavaScript -->
+    </div>
 
-        <div class="painting-frame">
-            <div class="painting-container">
-                <img class="painting-image" src="assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.31.08%20PM.png" alt="Sculpture 2">
-            </div>
-            <div class="gallery-label">
-                <h2>Sculpture 2</h2>
-                <p>Exploration of form and structure</p>
-            </div>
-        </div>
-
-        <div class="painting-frame">
-            <div class="painting-container">
-                <img class="painting-image" src="assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.31.47%20PM.png" alt="Sculpture 3">
-            </div>
-            <div class="gallery-label">
-                <h2>Sculpture 3</h2>
-                <p>Spatial manipulation and balance</p>
-            </div>
-        </div>
-
-        <div class="painting-frame">
-            <div class="painting-container">
-                <img class="painting-image" src="assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.32.01%20PM.png" alt="Sculpture 4">
-            </div>
-            <div class="gallery-label">
-                <h2>Sculpture 4</h2>
-                <p>Material and form interaction</p>
-            </div>
-        </div>
-
-        <div class="painting-frame">
-            <div class="painting-container">
-                <img class="painting-image" src="assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.42.55%20PM.png" alt="Sculpture 5">
-            </div>
-            <div class="gallery-label">
-                <h2>Sculpture 5</h2>
-                <p>Dynamic spatial presence</p>
-            </div>
-        </div>
-
-        <div class="painting-frame">
-            <div class="painting-container">
-                <img class="painting-image" src="assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.43.50%20PM.png" alt="Sculpture 6">
-            </div>
-            <div class="gallery-label">
-                <h2>Sculpture 6</h2>
-                <p>Dimensional exploration</p>
-            </div>
-        </div>
-
-        <div class="painting-frame">
-            <div class="painting-container">
-                <img class="painting-image" src="assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.44.15%20PM.png" alt="Sculpture 7">
-            </div>
-            <div class="gallery-label">
-                <h2>Sculpture 7</h2>
-                <p>Form and negative space</p>
-            </div>
-        </div>
-
-        <div class="painting-frame">
-            <div class="painting-container">
-                <img class="painting-image" src="assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.44.36%20PM.png" alt="Sculpture 8">
-            </div>
-            <div class="gallery-label">
-                <h2>Sculpture 8</h2>
-                <p>Compositional harmony</p>
-            </div>
+    <div class="gallery-modal" id="gallery-modal" aria-hidden="true">
+        <div class="gallery-modal-backdrop" id="gallery-modal-backdrop"></div>
+        <div class="gallery-modal-content" role="dialog" aria-modal="true" aria-label="Sculpture Viewer">
+            <button class="gallery-modal-back" id="back-gallery-modal" aria-label="Back to Gallery">
+                <span>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+                        <path d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </span>
+                Back
+            </button>
+            <button class="gallery-modal-close" id="close-gallery-modal" aria-label="Close gallery">×</button>
+            <img id="modal-image" src="" alt="Full size sculpture view">
         </div>
     </div>
 
@@ -257,6 +302,69 @@
         <div class="gallery-item placeholder"><div>Image 2</div></div>
         <div class="gallery-item placeholder"><div>Image 3</div></div>
     </div>
+
+    <script>
+        const galleryData = [
+            { image: 'assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.30.54%20PM.png', title: 'Sculpture 1', description: 'Three-dimensional form and space' },
+            { image: 'assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.31.08%20PM.png', title: 'Sculpture 2', description: 'Exploration of form and structure' },
+            { image: 'assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.31.47%20PM.png', title: 'Sculpture 3', description: 'Spatial manipulation and balance' },
+            { image: 'assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.32.01%20PM.png', title: 'Sculpture 4', description: 'Material and form interaction' },
+            { image: 'assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.42.55%20PM.png', title: 'Sculpture 5', description: 'Dynamic spatial presence' },
+            { image: 'assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.43.50%20PM.png', title: 'Sculpture 6', description: 'Dimensional exploration' },
+            { image: 'assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.44.15%20PM.png', title: 'Sculpture 7', description: 'Form and negative space' },
+            { image: 'assets/images/sculptures/Screen%20Shot%202026-03-04%20at%2011.44.36%20PM.png', title: 'Sculpture 8', description: 'Compositional harmony' }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const gallery = document.getElementById('painting-gallery');
+            const modal = document.getElementById('gallery-modal');
+            const modalImage = document.getElementById('modal-image');
+            const backdrop = document.getElementById('gallery-modal-backdrop');
+            const backButton = document.getElementById('back-gallery-modal');
+            const closeButton = document.getElementById('close-gallery-modal');
+
+            // Generate gallery items
+            galleryData.forEach((item, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.innerHTML = `
+                    <img class="gallery-item-image" src="${item.image}" alt="${item.title}">
+                    <div class="gallery-item-label">
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                    </div>
+                `;
+
+                galleryItem.addEventListener('click', () => {
+                    modalImage.src = item.image;
+                    modalImage.alt = item.title;
+                    modal.classList.add('is-open');
+                    modal.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                gallery.appendChild(galleryItem);
+            });
+
+            // Modal controls
+            const closeModal = () => {
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            };
+
+            backButton.addEventListener('click', closeModal);
+            closeButton.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+
+            // Escape key to close
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 
     <script src="script.js"></script>
 
