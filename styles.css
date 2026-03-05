@@ -171,8 +171,32 @@ main{width:100%;margin:0;padding:0}
   .tile--bottom-mid-left{grid-column:1;grid-row:auto}
   .tile--bottom-mid-right{grid-column:1;grid-row:auto}
   .tile--bottom-right{grid-column:1;grid-row:auto}
-  body.project-detail-page .category-bar{padding:0 8px}
-  body.project-detail-page .category-bar a{font-size:clamp(14px,3.4vw,18px);padding:0 10px}
+  
+  /* Responsive category bar */
+  .category-bar{height:auto;flex-wrap:wrap;gap:0}
+  .category-bar a{padding:12px 16px;font-size:clamp(12px,2.5vw,16px);line-height:1.4}
+  body.project-detail-page .category-bar{padding:0 4px}
+  body.project-detail-page .category-bar a{font-size:clamp(12px,2.5vw,14px);padding:0 8px}
+  
+  /* Responsive header */
+  .site-header{padding:16px 0}
+  .site-name{font-size:clamp(18px,3vw,28px)}
+  .nav-about{font-size:14px}
+}
+
+/* Extra small phones */
+@media(max-width:480px){
+  .portfolio{padding:0}
+  .grid{gap:var(--gap-sm);padding:var(--pad-sm)}
+  
+  .category-bar{gap:0;flex-direction:column}
+  .category-bar a{flex:1;padding:10px 12px;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.1)}
+  .category-bar a.active{border-bottom:3px solid currentColor}
+  
+  /* Hide site header completely on very small screens, show hamburger instead */
+  .site-header{padding:12px 0;background:#fafaf8}
+  .site-name{font-size:16px}
+  .nav-about{font-size:12px}
 }
 
 /* Category flow section */

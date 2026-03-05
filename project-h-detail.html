@@ -97,6 +97,18 @@
             .gallery-item.span-2 {
                 grid-column: span 2;
             }
+
+            .project-header {
+                padding: 50px 30px 30px;
+            }
+
+            .project-header h1 {
+                font-size: 40px;
+            }
+
+            .project-header p {
+                font-size: 16px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -112,8 +124,50 @@
                 grid-column: 1;
             }
 
+            .project-header {
+                padding: 40px 20px 20px;
+            }
+
             .project-header h1 {
                 font-size: 32px;
+            }
+
+            .project-header p {
+                font-size: 16px;
+            }
+
+            .gallery-item {
+                min-height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-gallery {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 16px;
+            }
+
+            .project-header {
+                padding: 30px 16px 16px;
+            }
+
+            .project-header h1 {
+                font-size: 24px;
+                margin: 0 0 8px 0;
+            }
+
+            .project-header p {
+                font-size: 14px;
+            }
+
+            .gallery-item {
+                min-height: 160px;
+                padding: 12px;
+            }
+
+            .gallery-item.placeholder {
+                padding: 12px;
             }
         }
     </style>

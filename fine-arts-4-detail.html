@@ -73,7 +73,47 @@
             display: none;
         }
 
+        /* Tablet breakpoint */
+        @media (max-width: 1024px) {
+            .project-header {
+                padding: 50px 30px 30px;
+            }
+
+            .project-header h1 {
+                font-size: 40px;
+            }
+
+            .project-header p {
+                font-size: 16px;
+            }
+
+            .project-gallery {
+                padding: 60px 30px;
+            }
+
+            .gallery-hero {
+                max-width: 900px;
+            }
+        }
+
+        /* Mobile: single column stack */
         @media (max-width: 768px) {
+            body[data-page="fine-arts"] {
+                padding-top: calc(88px + 56px);
+            }
+
+            .project-header {
+                padding: 40px 20px 20px;
+            }
+
+            .project-header h1 {
+                font-size: 32px;
+            }
+
+            .project-header p {
+                font-size: 16px;
+            }
+
             .project-gallery {
                 min-height: auto;
                 padding: 40px 20px;
@@ -82,9 +122,36 @@
             .gallery-hero {
                 aspect-ratio: 1;
             }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 480px) {
+            body[data-page="fine-arts"] {
+                padding-top: calc(88px + 48px);
+            }
+
+            .project-header {
+                padding: 30px 16px 16px;
+            }
 
             .project-header h1 {
-                font-size: 32px;
+                font-size: 24px;
+                margin: 0 0 8px 0;
+            }
+
+            .project-header p {
+                font-size: 14px;
+            }
+
+            .project-gallery {
+                min-height: auto;
+                padding: 30px 16px;
+            }
+
+            .gallery-hero {
+                aspect-ratio: 1;
+                max-width: 100%;
+                border-radius: 4px;
             }
         }
     </style>
