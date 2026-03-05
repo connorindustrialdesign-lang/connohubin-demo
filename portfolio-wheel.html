@@ -383,38 +383,26 @@
         document.documentElement.style.setProperty('--wheel-bar-h', `${barHeight}px`);
       }
 
-      // Scroll detection for category bar highlighting using Intersection Observer
-      function initCategoryHighlighting() {
+      // Scroll detection for category bar highlighting
+      function updateCategoryBar() {
+        const sections = document.querySelectorAll('[data-category]');
         const categoryLinks = document.querySelectorAll('.category-bar [data-category]');
         let currentCategory = 'industrial-design';
         
-        const options = {
-          root: null,
-          rootMargin: '-40% 0px -40% 0px',
-          threshold: 0
-        };
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          // If section is in upper half of viewport, mark as current
+          if (rect.top <= window.innerHeight / 2) {
+            currentCategory = section.getAttribute('data-category');
+          }
+        });
         
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              currentCategory = entry.target.getAttribute('data-category');
-              console.log('Intersection detected:', currentCategory);
-              
-              categoryLinks.forEach(link => {
-                link.classList.remove('active');
-              });
-              
-              const activeLink = document.querySelector(`.category-bar [data-category="${currentCategory}"]`);
-              if (activeLink) {
-                activeLink.classList.add('active');
-                console.log('Activated link:', currentCategory);
-              }
-            }
-          });
-        }, options);
-        
-        const sections = document.querySelectorAll('section.category-section[data-category]');
-        sections.forEach(section => observer.observe(section));
+        categoryLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('data-category') === currentCategory) {
+            link.classList.add('active');
+          }
+        });
       }
       
       // Scroll to hash anchor on page load
@@ -427,17 +415,21 @@
         
         setTimeout(() => {
           section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          updateCategoryBar();
         }, 100);
       }
       
       document.addEventListener('DOMContentLoaded', () => {
-        initCategoryHighlighting();
-        scrollToHash();
         syncWheelOffsets();
+        updateCategoryBar();
+        scrollToHash();
       });
       window.addEventListener('resize', syncWheelOffsets);
       window.addEventListener('load', syncWheelOffsets);
-      window.addEventListener('scroll', syncWheelOffsets);
+      window.addEventListener('scroll', () => {
+        syncWheelOffsets();
+        updateCategoryBar();
+      });
       window.addEventListener('hashchange', scrollToHash);
     </script>
   </body>
