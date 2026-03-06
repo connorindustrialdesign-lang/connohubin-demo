@@ -175,6 +175,15 @@
             grid-row: span 2;
         }
 
+        .form-process-grid {
+            gap: 36px;
+        }
+
+        .form-process-grid .grid-item img {
+            height: min(72vh, 760px);
+            object-fit: cover;
+        }
+
         /* Description/Caption Box */
         .section-text {
             background: #f9f9f9;
@@ -253,6 +262,10 @@
             .section-text {
                 padding: 40px;
             }
+
+            .form-process-grid .grid-item img {
+                height: min(62vh, 620px);
+            }
         }
 
         @media (max-width: 768px) {
@@ -289,6 +302,10 @@
             .full-bleed-black {
                 padding: 40px 20px;
                 margin-bottom: 80px;
+            }
+
+            .form-process-grid .grid-item img {
+                height: min(52vh, 460px);
             }
         }
 
@@ -339,6 +356,10 @@
             .full-bleed-black {
                 padding: 30px 16px;
                 margin-bottom: 60px;
+            }
+
+            .form-process-grid .grid-item img {
+                height: min(42vh, 340px);
             }
 
             .grid-item.tall {
@@ -405,7 +426,7 @@
             <div class="section-header">
                 <h2>form process</h2>
             </div>
-            <div class="image-grid grid-2">
+            <div class="image-grid grid-2 form-process-grid">
                 <div class="grid-item"><img src="assets/images/processed/project-d/concept%20sketch%20%231.jpg" alt="Concept sketch 1"><div class="image-caption">IMAGE 2</div></div>
                 <div class="grid-item"><img src="assets/images/processed/project-d/concept%20sketch%20%232.jpg" alt="Concept sketch 2"><div class="image-caption">IMAGE 3</div></div>
             </div>
