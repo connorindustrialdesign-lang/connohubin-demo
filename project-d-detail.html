@@ -176,11 +176,19 @@
         }
 
         .form-process-grid {
-            gap: 36px;
+            gap: 0;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-bottom: 0;
+        }
+
+        .form-process-grid .grid-item {
+            background: transparent;
+            border-radius: 0;
         }
 
         .form-process-grid .grid-item img {
-            height: min(72vh, 760px);
+            height: 100vh;
             object-fit: cover;
         }
 
@@ -264,7 +272,7 @@
             }
 
             .form-process-grid .grid-item img {
-                height: min(62vh, 620px);
+                height: 100vh;
             }
         }
 
@@ -305,7 +313,11 @@
             }
 
             .form-process-grid .grid-item img {
-                height: min(52vh, 460px);
+                height: 100vh;
+            }
+
+            .form-process-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -359,7 +371,7 @@
             }
 
             .form-process-grid .grid-item img {
-                height: min(42vh, 340px);
+                height: 100vh;
             }
 
             .grid-item.tall {
