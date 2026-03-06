@@ -91,6 +91,41 @@
             margin: 0;
         }
 
+        /* Problem Section Layout */
+        .problem-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: stretch;
+            margin-bottom: 140px;
+        }
+
+        .problem-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 20px;
+        }
+
+        .problem-image {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .problem-image .image-grid {
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        .problem-image .grid-item {
+            height: 100%;
+        }
+
+        .problem-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* Image Layouts */
         .image-grid {
             display: grid;
@@ -156,6 +191,18 @@
             margin: 0 0 16px 0;
         }
 
+        .functions-list {
+            margin: 0;
+            padding-left: 22px;
+        }
+
+        .functions-list li {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
         .section-text p:last-child {
             margin-bottom: 0;
         }
@@ -164,6 +211,15 @@
         @media (max-width: 1024px) {
             .project-hero-image {
                 height: 450px;
+            }
+
+            .problem-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .problem-content {
+                padding-right: 0;
             }
 
             .project-title-block h1 {
@@ -320,69 +376,59 @@
 
     <!-- Project Title -->
     <div class="project-title-block">
-        <h1>Project D</h1>
-        <p>A design-focused exploration of form and function</p>
+        <h1>Brij</h1>
+        <p>bridging the gap between senior citizens and technology</p>
     </div>
 
     <!-- Content -->
     <div class="project-content">
-        <section class="project-section">
-            <div class="section-header">
-                <h2>The Problem</h2>
+        <section class="project-section problem-layout">
+            <div class="problem-content">
+                <div class="section-header">
+                    <h2>Problem</h2>
+                </div>
+                <div class="section-text">
+                    <p>Technology evolves faster than people. When people reach a certain age they no longer feel a need to learn the trending tech. In fact, they would much rather loose functionality in order to preserve the user experience of their youth. Brij aim is to help users of this demographic to connect with friends and family in a smartphone age.</p>
+                </div>
             </div>
-            <div class="section-text">
-                <p>OCR extraction indicates this project statement centers on bridging technology and senior citizens through an interface that feels approachable and familiar.</p>
-                <p>Source text captured from the board has been pulled into layout text while the image itself is now a cleaned processed version.</p>
-            </div>
-            <div class="image-grid grid-1">
-                <div class="grid-item">
-                    <img src="assets/images/processed/project-d/Number5.13.jpg" alt="Project D problem board">
-                    <div class="image-caption">IMAGE 1</div>
+            <div class="problem-image">
+                <div class="image-grid grid-1">
+                    <div class="grid-item">
+                        <img src="assets/images/processed/project-d/Number5.13.jpg" alt="Project D problem board">
+                        <div class="image-caption">IMAGE 1</div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="project-section">
             <div class="section-header">
-                <h2>Design Iterations</h2>
+                <h2>form process</h2>
             </div>
-            <div class="section-text">
-                <p>Concept sketching and iterative modeling established the physical language, interaction zones, and component hierarchy for the product direction.</p>
-            </div>
-            <div class="image-grid grid-3">
+            <div class="image-grid grid-2">
                 <div class="grid-item"><img src="assets/images/processed/project-d/concept%20sketch%20%231.jpg" alt="Concept sketch 1"><div class="image-caption">IMAGE 2</div></div>
                 <div class="grid-item"><img src="assets/images/processed/project-d/concept%20sketch%20%232.jpg" alt="Concept sketch 2"><div class="image-caption">IMAGE 3</div></div>
-                    <div class="grid-item"><img src="assets/images/processed/project-d/Number3.11.jpg" alt="Iteration 3"><div class="image-caption">IMAGE 4</div></div>
-                <div class="grid-item"><img src="assets/images/processed/project-d/Number4.12%202.jpg" alt="Iteration 4"><div class="image-caption">IMAGE 5</div></div>
-                <div class="grid-item"><img src="assets/images/processed/project-d/Number5.13.jpg" alt="Iteration 5"><div class="image-caption">IMAGE 6</div></div>
-                <div class="grid-item"><img src="assets/images/processed/project-d/Number6.14.jpg" alt="Iteration 6"><div class="image-caption">IMAGE 7</div></div>
-                <div class="grid-item"><img src="assets/images/processed/project-d/Number7.15.jpg" alt="Iteration 7"><div class="image-caption">IMAGE 8</div></div>
-                <div class="grid-item"><img src="assets/images/processed/project-d/Number8.16.jpg" alt="Iteration 8"><div class="image-caption">IMAGE 9</div></div>
-                 <div class="grid-item"><img src="assets/images/processed/project-d/topview.jpg" alt="Top view study"><div class="image-caption">IMAGE 10</div></div>
-            </div>
-            <div class="image-grid grid-1">
-                <div class="grid-item"><img src="assets/images/processed/project-d/Number5.13.jpg" alt="Heads up display concept"><div class="image-caption">IMAGE 11</div></div>
-            </div>
-            <div class="section-text">
-                <p>Extracted notes referenced controls like backspace, tab, shift, and enter, guiding tactile button mapping and interaction consistency.</p>
             </div>
         </section>
 
         <section class="project-section">
             <div class="section-header">
-                <h2>Interface</h2>
+                <h2>functions</h2>
             </div>
             <div class="section-text">
-                <p>UI/UX artifacts were extracted and normalized into text-driven content blocks to separate storytelling from visual boards.</p>
-                <p>Key extracted items include main menu actions, SMS/email navigation, and modular remote interaction behavior.</p>
-            </div>
-            <div class="image-grid grid-2">
-                <div class="grid-item"><img src="assets/images/processed/project-d/2.jpg" alt="Problem and insight interface board"><div class="image-caption">IMAGE 12</div></div>
-                <div class="grid-item"><img src="assets/images/processed/project-d/modular%20remote.jpg" alt="Modular remote feature board"><div class="image-caption">IMAGE 13</div></div>
+                <ul class="functions-list">
+                    <li>Make calls</li>
+                    <li>Read and send emails and texts</li>
+                    <li>Print any message correspondence</li>
+                    <li>Active typing through a heads-up display</li>
+                </ul>
             </div>
             <div class="full-bleed-black">
-                <img src="assets/images/processed/project-d/menu.png" alt="UI menu interface">
-                <div class="image-caption">IMAGE 14</div>
+                <img src="assets/images/processed/project-d/modular%20remote.jpg" alt="Functions overview graphic">
+                <div class="image-caption">IMAGE 13</div>
+            </div>
+            <div class="image-grid grid-1">
+                <div class="grid-item"><img src="assets/images/processed/project-d/menu.png" alt="UI and UX interface image"><div class="image-caption">IMAGE 14</div></div>
             </div>
         </section>
 
