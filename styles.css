@@ -41,7 +41,7 @@
 
 *{box-sizing:border-box}
 html,body{width:100%;height:100%}
-body{margin:0;font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;font-weight:400;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;font-weight:400;line-height:1.5;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
 
 /* Header */
@@ -63,7 +63,7 @@ body{margin:0;font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;fon
 /* Full-width category bar beneath header */
 .category-bar{position:fixed;top:88px;left:0;right:0;width:100%;display:flex;justify-content:space-between;align-items:center;height:var(--nav-height);background:#000;z-index:1002}
 .category-bar-content{display:flex;align-items:stretch;width:100%;height:100%}
-.category-bar a{flex:1;text-align:center;text-decoration:none;color:#fff;font-weight:400;padding:0 10px;font-size:clamp(16px,2.5vw,24px);line-height:var(--nav-height);position:relative;transition:color 0.2s, border-color 0.2s;font-family:'Space Grotesk',sans-serif}
+.category-bar a{flex:1;text-align:center;text-decoration:none;color:#fff;font-weight:500;padding:0 10px;font-size:clamp(16px,2.5vw,24px);line-height:var(--nav-height);position:relative;transition:color 0.2s, border-color 0.2s;font-family:'Space Grotesk',sans-serif}
 .category-bar a.active{border-bottom:5px solid #fff}
 .category-bar a[data-category="industrial-design"]:hover{color:#D4A545!important}
 .category-bar a[data-category="engineering"]:hover{color:#5B8FD4!important}
@@ -90,7 +90,7 @@ body{margin:0;font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;fon
 body.project-detail-page{padding-top:var(--nav-height)}
 body.project-detail-page .category-bar{position:fixed;top:0;left:0;right:0;justify-content:flex-start;padding:0 14px;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
 body.project-detail-page .category-bar-content{justify-content:flex-start;gap:4px}
-body.project-detail-page .category-bar a{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:flex-start;text-align:left;font-weight:500;padding:0 14px;font-size:clamp(16px,2.2vw,22px);line-height:1;height:100%}
+body.project-detail-page .category-bar a{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:flex-start;text-align:left;font-weight:600;padding:0 14px;font-size:clamp(16px,2.2vw,22px);line-height:1;height:100%}
 body.project-detail-page .category-bar a.category-logo{font-weight:700;padding:0 18px 0 10px;margin-right:6px;border-right:1px solid rgba(255,255,255,0.22);border-bottom:none;color:#fff}
 body.project-detail-page .category-bar a.category-logo:hover{color:#fff}
 body.project-detail-page .category-bar a.category-logo.active{border-bottom:none}
@@ -209,6 +209,9 @@ main{width:100%;margin:0;padding:0}
 .category-flow{padding:60px 20px;text-align:center;max-width:1200px;margin:0 auto}
 .flow-link{display:inline-block;padding:20px 40px;font-size:18px;font-weight:700;text-decoration:none;color:#0b0b0b;background:#f0f0f0;border-radius:8px;transition:all 0.3s ease}
 .flow-link:hover{background:#e0e0e0;transform:translateX(8px)}
+
+.site-footer{border-top:1px solid rgba(0,0,0,0.08);padding:22px 0 28px;background:var(--bg)}
+.site-footer p{margin:0;color:var(--muted);font-size:14px;letter-spacing:0.01em}
 
 /* dark adjustments */
 body[data-theme='dark'] .tile-label{background:rgba(8,10,12,0.65);color:var(--text)}
