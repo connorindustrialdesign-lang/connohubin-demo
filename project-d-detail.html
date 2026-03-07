@@ -134,6 +134,32 @@
             object-fit: cover;
         }
 
+        /* Functions Layout */
+        .functions-layout {
+            display: grid;
+            grid-template-columns: 1fr 0.8fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .functions-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .functions-image {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .functions-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+
         /* Image Layouts */
         .image-grid {
             display: grid;
@@ -269,6 +295,11 @@
 
             .problem-content {
                 padding-right: 0;
+            }
+
+            .functions-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
 
             .project-title-block h1 {
@@ -464,21 +495,25 @@
             </div>
         </section>
 
-        <section class="project-section">
-            <div class="section-header">
-                <h2>functions</h2>
-                <p>the essential functions of a phone with the form factor of a typewriter.</p>
+        <section class="project-section functions-layout">
+            <div class="functions-content">
+                <div class="section-header">
+                    <h2>functions</h2>
+                    <p>the essential functions of a phone with the form factor of a typewriter.</p>
+                </div>
+                <div class="section-text">
+                    <ul class="functions-list">
+                        <li>Make calls</li>
+                        <li>Read and send emails and texts</li>
+                        <li>Print any message correspondence</li>
+                        <li>Active typing through a heads-up display</li>
+                    </ul>
+                </div>
             </div>
-            <div class="section-text">
-                <ul class="functions-list">
-                    <li>Make calls</li>
-                    <li>Read and send emails and texts</li>
-                    <li>Print any message correspondence</li>
-                    <li>Active typing through a heads-up display</li>
-                </ul>
-            </div>
-            <div class="full-bleed-black">
-                <img src="assets/images/project%20D/topview%202.jpg" alt="Functions overview graphic">
+            <div class="functions-image">
+                <div style="background: #000; padding: 20px; border-radius: 0;">
+                    <img src="assets/images/project%20D/topview%202.jpg" alt="Functions overview graphic">
+                </div>
                 <div class="image-caption">IMAGE 13</div>
             </div>
         </section>
