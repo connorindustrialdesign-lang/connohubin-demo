@@ -134,20 +134,24 @@ function initCategoryBarMode() {
     const links = Array.from(barContent.querySelectorAll('a'));
     links.forEach((link) => {
       const href = (link.getAttribute('href') || '').trim();
-      // Keep category links (portfolio-wheel.html#...), about, and logo
+      // Keep category links (portfolio-wheel.html#...), details, and logo
       const shouldKeep = href.includes('portfolio-wheel.html#') || 
                         href === 'about.html' || 
                         link.classList.contains('category-logo');
       if (!shouldKeep) {
         link.remove();
       }
+
+      if (href === 'about.html') {
+        link.textContent = 'Details';
+      }
     });
 
     if (!barContent.querySelector('a[href="about.html"]')) {
-      const aboutLink = document.createElement('a');
-      aboutLink.href = 'about.html';
-      aboutLink.textContent = 'About';
-      barContent.appendChild(aboutLink);
+      const detailsLink = document.createElement('a');
+      detailsLink.href = 'about.html';
+      detailsLink.textContent = 'Details';
+      barContent.appendChild(detailsLink);
     }
 
     if (barContent.querySelector('.category-logo')) return;
