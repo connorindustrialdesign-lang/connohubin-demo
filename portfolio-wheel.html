@@ -133,6 +133,10 @@
       .category-section { 
         scroll-margin-top: calc(var(--wheel-header-h) + var(--wheel-bar-h) + 12px);
       }
+
+      .id-project-e-tile {
+        aspect-ratio: 4 / 1;
+      }
       
       /* Engineering section full-width cards */
       .cat-card.shope-project {
@@ -226,6 +230,10 @@
         .cat-card.design-project {
           min-height: 280px;
         }
+
+        .id-project-e-tile {
+          aspect-ratio: 2.4 / 1;
+        }
       }
       
       @media (max-width: 480px) {
@@ -250,10 +258,20 @@
         .cat-card.design-project {
           min-height: 200px;
         }
+
+        .id-project-e-tile {
+          aspect-ratio: 2 / 1;
+        }
         
         .cat-card.design-project .design-project-title {
           font-size: clamp(20px, 3vw, 32px);
           padding: 16px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .id-project-e-tile {
+          aspect-ratio: 3 / 1;
         }
       }
     </style>
@@ -306,7 +324,7 @@
               <img src="assets/images/project-d.jpg" alt="Project D">
             </a>
 
-            <a class="tile" href="project-e-detail.html" style="grid-column: 1 / -1; aspect-ratio: 4 / 1; background-image: url('assets/images/project%20E/blackcup.30.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-decoration: none; color: inherit; position: relative;">
+            <a class="tile id-project-e-tile" href="project-e-detail.html" style="grid-column: 1 / -1; background-image: url('assets/images/project%20E/blackcup.30.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-decoration: none; color: inherit; position: relative;">
             </a>
           </div>
         </section>
