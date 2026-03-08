@@ -3,72 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project C - Connor's Portfolio</title>
+    <title>mill creek house - Connor's Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .project-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 40px;
-            max-width: 1400px;
+        .project-shell {
+            max-width: 1320px;
             margin: 0 auto;
-        }
-
-        .gallery-item {
-            aspect-ratio: auto;
-            overflow: visible;
-            border-radius: 8px;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 250px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            display: block;
-        }
-
-        .gallery-item.placeholder {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            font-weight: 600;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .gallery-item.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .gallery-item.single {
-            grid-column: 1 / -1;
-        }
-
-        .gallery-item.span-2 {
-            grid-column: span 2;
+            padding: 0 40px 88px;
         }
 
         .project-header {
-            padding: 60px 40px 40px;
-            text-align: center;
+            padding: 64px 0 48px;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 36px;
         }
 
         .project-header h1 {
-            font-size: 48px;
-            margin: 0 0 10px 0;
+            font-size: 68px;
+            margin: 0 0 14px 0;
             font-weight: 700;
+            letter-spacing: -2px;
         }
 
         .project-header p {
-            font-size: 18px;
-            color: #666;
+            font-size: 20px;
+            color: #555;
             margin: 0;
+            max-width: 760px;
+            line-height: 1.6;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 24px;
+        }
+
+        .story-rail {
+            display: grid;
+            gap: 18px;
+            align-content: start;
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .rail-card {
+            border: 1px solid #e2e2e2;
+            padding: 18px;
+            background: #fafafa;
+        }
+
+        .rail-card span {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .rail-card p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            line-height: 1.45;
+            font-weight: 500;
+            color: #222;
+        }
+
+        .story-content {
+            display: grid;
+            gap: 24px;
+        }
+
+        .frame {
+            background: #f4f4f4;
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: 600;
+            text-align: center;
+            padding: 24px;
+        }
+
+        .frame.hero {
+            min-height: 420px;
+        }
+
+        .frame-pair {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .frame-stack {
+            display: grid;
+            gap: 24px;
         }
 
         .hidden-link {
@@ -88,77 +120,98 @@
         }
 
         @media (max-width: 1024px) {
-            .project-gallery {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-                padding: 30px;
+            .project-shell {
+                padding: 0 30px 72px;
             }
 
-            .gallery-item.span-2 {
-                grid-column: span 2;
-            }
-            
             .project-header {
-                padding: 50px 30px 30px;
+                padding: 52px 0 38px;
             }
 
             .project-header h1 {
-                font-size: 40px;
+                font-size: 50px;
+                letter-spacing: -1px;
             }
 
             .project-header p {
-                font-size: 16px;
+                font-size: 18px;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-rail {
+                position: static;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
         @media (max-width: 768px) {
-            .project-gallery {
-                grid-template-columns: 1fr;
-                gap: 12px;
-                padding: 20px;
-            }
-
-            .gallery-item.full-width,
-            .gallery-item.single,
-            .gallery-item.span-2 {
-                grid-column: 1;
+            .project-shell {
+                padding: 0 20px 60px;
             }
 
             .project-header {
-                padding: 40px 20px 20px;
+                padding: 44px 0 28px;
+                margin-bottom: 26px;
             }
 
             .project-header h1 {
-                font-size: 32px;
+                font-size: 38px;
+                margin-bottom: 10px;
             }
 
             .project-header p {
+                font-size: 17px;
+            }
+
+            .story-rail {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .rail-card p {
                 font-size: 16px;
+            }
+
+            .frame,
+            .frame.hero {
+                min-height: 220px;
+            }
+
+            .frame-pair {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .frame-stack {
+                gap: 16px;
             }
         }
 
         @media (max-width: 480px) {
-            .project-gallery {
-                grid-template-columns: 1fr;
-                gap: 10px;
-                padding: 16px;
-            }
-
-            .gallery-item {
-                min-height: 160px;
+            .project-shell {
+                padding: 0 16px 52px;
             }
 
             .project-header {
-                padding: 30px 16px 16px;
+                padding: 34px 0 22px;
             }
 
             .project-header h1 {
-                font-size: 24px;
+                font-size: 30px;
                 margin: 0 0 8px 0;
+                letter-spacing: -0.5px;
             }
 
             .project-header p {
-                font-size: 14px;
+                font-size: 15px;
+            }
+
+            .frame,
+            .frame.hero {
+                min-height: 180px;
             }
         }
     </style>
@@ -186,24 +239,46 @@
         <a href="portfolio-wheel.html#fine-arts" data-category="fine-arts">Fine Arts</a>
     </nav>
 
-    <div class="project-header">
+    <main class="project-shell">
+        <div class="project-header">
+            <h1>mill creek house</h1>
+            <p>a residential project framework focused on site response, spatial sequence, structural strategy, and final architectural expression</p>
+        </div>
 
-        <h1>Project C</h1>
-        <p>Coming soon with detailed imagery</p>
-    </div>
+        <section class="story-grid">
+            <aside class="story-rail">
+                <div class="rail-card">
+                    <span>Chapter 01</span>
+                    <p>Site + Constraints</p>
+                </div>
+                <div class="rail-card">
+                    <span>Chapter 02</span>
+                    <p>Plan + Circulation</p>
+                </div>
+                <div class="rail-card">
+                    <span>Chapter 03</span>
+                    <p>Envelope + Material</p>
+                </div>
+            </aside>
 
-    <div class="project-gallery">
-        <div class="gallery-item full-width placeholder"><div>Hero Image</div></div>
-        <div class="gallery-item placeholder"><div>Detail 01</div></div>
-        <div class="gallery-item placeholder"><div>Detail 02</div></div>
-        <div class="gallery-item placeholder"><div>Detail 03</div></div>
-        <div class="gallery-item full-width placeholder"><div>Process Spread</div></div>
-        <div class="gallery-item span-2 placeholder"><div>Feature Render</div></div>
-        <div class="gallery-item placeholder"><div>Detail 04</div></div>
-        <div class="gallery-item full-width placeholder"><div>Final Outcome</div></div>
-        <div class="gallery-item placeholder"><div>Detail 05</div></div>
-        <div class="gallery-item placeholder"><div>Detail 06</div></div>
-    </div>
+            <div class="story-content">
+                <div class="frame hero">Hero Perspective / Context View</div>
+                <div class="frame-pair">
+                    <div class="frame">Site Plan + Orientation</div>
+                    <div class="frame">Ground Floor Plan</div>
+                </div>
+                <div class="frame">Section Cut + Daylight Strategy</div>
+                <div class="frame-pair">
+                    <div class="frame">Material Palette + Details</div>
+                    <div class="frame">Structural Diagram</div>
+                </div>
+                <div class="frame-stack">
+                    <div class="frame">Interior Sequence</div>
+                    <div class="frame">Final Exterior and Closing Statement</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 

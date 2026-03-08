@@ -3,45 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project A - Connor's Portfolio</title>
+  <title>CTE pack - Connor's Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .project-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding:40px; max-width:1400px; margin:0 auto; }
-    .gallery-item { border-radius:8px; min-height:240px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-    .gallery-item.placeholder { background:linear-gradient(135deg,#7f7fd5 0%,#86a8e7 55%,#91eae4 100%); color:#fff; font-weight:600; text-align:center; padding:20px; }
-    .gallery-item.full-width { grid-column:1 / -1; min-height:320px; }
-    .gallery-item.span-2 { grid-column:span 2; min-height:280px; }
-    .project-header { padding:60px 40px 40px; text-align:center; }
-    .project-header h1 { font-size:48px; margin:0 0 10px; }
-    .project-header p { font-size:18px; color:#666; margin:0; }
+    .project-shell { max-width: 1240px; margin: 0 auto; padding: 0 40px 88px; }
+    .project-header { padding: 64px 0 56px; display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: end; }
+    .project-header h1 { font-size: 72px; margin: 0; line-height: 1; letter-spacing: -2px; }
+    .project-header p { font-size: 20px; color: #444; margin: 0; max-width: 560px; line-height: 1.6; }
+
+    .phase-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
+    .phase-card { background: #f4f4f4; padding: 20px; min-height: 112px; display: flex; flex-direction: column; justify-content: space-between; }
+    .phase-card span { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #666; font-weight: 600; }
+    .phase-card strong { font-size: 24px; font-weight: 700; line-height: 1.2; }
+
+    .layout-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px; }
+    .column-stack { display: grid; gap: 20px; }
+    .frame { background: #f6f6f6; min-height: 220px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #666; padding: 24px; text-align: center; }
+    .frame.hero { min-height: 520px; }
+    .frame.wide { grid-column: 1 / -1; min-height: 300px; }
+    .frame.tall { min-height: 360px; }
     
     @media (max-width:1024px) {
-      .project-gallery{grid-template-columns:repeat(2,1fr); padding:30px; gap:15px;}
-      .gallery-item.span-2{grid-column:span 2;}
-      .gallery-item.full-width{grid-column:1 / -1;}
-      .project-header{padding:50px 30px 30px;}
-      .project-header h1{font-size:40px;}
-      .project-header p{font-size:16px;}
+      .project-shell { padding: 0 30px 72px; }
+      .project-header { grid-template-columns: 1fr; gap: 20px; padding: 52px 0 40px; }
+      .project-header h1 { font-size: 54px; letter-spacing: -1px; }
+      .project-header p { font-size: 18px; }
+      .phase-strip { grid-template-columns: repeat(2, 1fr); }
+      .layout-grid { grid-template-columns: 1fr; }
+      .frame.hero { min-height: 420px; }
     }
     
     @media (max-width:768px) {
-      .project-gallery{grid-template-columns:1fr; padding:20px; gap:12px;}
-      .gallery-item.full-width,.gallery-item.span-2{grid-column:1;}
-      .gallery-item.full-width{min-height:240px;}
-      .gallery-item.span-2{min-height:240px;}
-      .project-header{padding:40px 20px 20px;}
-      .project-header h1{font-size:32px;}
-      .project-header p{font-size:16px;}
+      .project-shell { padding: 0 20px 60px; }
+      .project-header { padding: 44px 0 32px; }
+      .project-header h1 { font-size: 40px; }
+      .project-header p { font-size: 17px; }
+      .phase-strip { grid-template-columns: 1fr; gap: 12px; }
+      .frame.hero { min-height: 320px; }
+      .frame, .frame.tall, .frame.wide { min-height: 240px; }
     }
     
     @media (max-width:480px) {
-      .project-gallery{grid-template-columns:1fr; padding:16px; gap:10px;}
-      .gallery-item{min-height:160px;}
-      .gallery-item.full-width{min-height:160px;}
-      .project-header{padding:30px 16px 16px;}
-      .project-header h1{font-size:24px; margin:0 0 8px;}
-      .project-header p{font-size:14px;}
+      .project-shell { padding: 0 16px 52px; }
+      .project-header { padding: 34px 0 22px; }
+      .project-header h1 { font-size: 30px; letter-spacing: -0.5px; }
+      .project-header p { font-size: 15px; }
+      .phase-card strong { font-size: 20px; }
+      .frame.hero { min-height: 260px; }
+      .frame, .frame.tall, .frame.wide { min-height: 190px; }
     }
   </style>
 </head>
@@ -68,21 +78,35 @@
     <a href="portfolio-wheel.html#fine-arts" data-category="fine-arts">Fine Arts</a>
   </nav>
 
-  <div class="project-header">
-    <h1>Project A</h1>
-    <p>Layout draft ready for final images</p>
-  </div>
+  <main class="project-shell">
+    <div class="project-header">
+      <div>
+        <h1>CTE pack</h1>
+      </div>
+      <p>a modular project framework for concept, pack architecture, user interaction, and final validation</p>
+    </div>
 
-  <div class="project-gallery">
-    <div class="gallery-item full-width placeholder"><div>Hero Image</div></div>
-    <div class="gallery-item span-2 placeholder"><div>Feature Spread</div></div>
-    <div class="gallery-item placeholder"><div>Detail 01</div></div>
-    <div class="gallery-item full-width placeholder"><div>Process Board</div></div>
-    <div class="gallery-item placeholder"><div>Detail 02</div></div>
-    <div class="gallery-item placeholder"><div>Detail 03</div></div>
-    <div class="gallery-item placeholder"><div>Detail 04</div></div>
-    <div class="gallery-item full-width placeholder"><div>Final Render</div></div>
-  </div>
+    <section class="phase-strip">
+      <article class="phase-card"><span>Phase 01</span><strong>Problem + Context</strong></article>
+      <article class="phase-card"><span>Phase 02</span><strong>Form + Layout</strong></article>
+      <article class="phase-card"><span>Phase 03</span><strong>Function + System</strong></article>
+      <article class="phase-card"><span>Phase 04</span><strong>Prototype + Outcome</strong></article>
+    </section>
+
+    <section class="layout-grid">
+      <div class="column-stack">
+        <div class="frame hero">Hero Image / Product in Context</div>
+        <div class="frame">Problem Statement + Key Metrics</div>
+        <div class="frame">Exploded View / Component Breakdown</div>
+      </div>
+      <div class="column-stack">
+        <div class="frame tall">Form Iterations / Sketch Progression</div>
+        <div class="frame">User Flow + Interaction Touchpoints</div>
+        <div class="frame">Material + Manufacturing Decisions</div>
+      </div>
+      <div class="frame wide">Prototype Results + Final Product Story</div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
