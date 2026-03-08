@@ -349,6 +349,17 @@
             .project-section .section-header + .image-grid {
                 margin-top: 24px;
             }
+
+            .prototype-section .section-text + .image-grid,
+            .final-product-section .section-text + .final-product-hero,
+            .final-product-section .final-product-hero + .image-grid {
+                margin-top: 20px !important;
+            }
+
+            .prototype-section .image-grid,
+            .final-product-section .image-grid {
+                gap: 24px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -377,6 +388,17 @@
             .project-section .section-text + .final-product-hero,
             .project-section .section-header + .image-grid {
                 margin-top: 18px;
+            }
+
+            .prototype-section .section-text + .image-grid,
+            .final-product-section .section-text + .final-product-hero,
+            .final-product-section .final-product-hero + .image-grid {
+                margin-top: 16px !important;
+            }
+
+            .prototype-section .image-grid,
+            .final-product-section .image-grid {
+                gap: 20px;
             }
 
             .section-text p,
@@ -434,7 +456,7 @@
             </div>
         </section>
 
-        <section class="project-section">
+        <section class="project-section prototype-section">
             <div class="image-grid grid-1">
                 <div class="grid-item"><img src="assets/images/project%20E/process.png" alt="Nightstand form process"><div class="image-caption">PROCESS</div></div>
             </div>
@@ -478,7 +500,7 @@
             </div>
         </section>
 
-        <section class="project-section">
+        <section class="project-section final-product-section">
             <div class="section-header">
                 <h2>Material and Lighting</h2>
             </div>
