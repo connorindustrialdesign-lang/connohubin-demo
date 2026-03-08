@@ -342,6 +342,12 @@
             .section-header h2 { font-size: 32px; }
             .grid-3 { grid-template-columns: 1fr; }
             .grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+            .project-section .section-text + .image-grid,
+            .project-section .section-text + .final-product-hero,
+            .project-section .section-header + .image-grid {
+                margin-top: 24px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -365,6 +371,13 @@
                 font-size: 24px;
                 margin-bottom: 14px;
             }
+
+            .project-section .section-text + .image-grid,
+            .project-section .section-text + .final-product-hero,
+            .project-section .section-header + .image-grid {
+                margin-top: 18px;
+            }
+
             .section-text p,
             .functions-list li { font-size: 18px; }
         }
