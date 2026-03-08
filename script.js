@@ -154,6 +154,29 @@ function initFineArtsCategoryBarSync() {
   window.addEventListener('load', syncOffsets);
 }
 
+function initHomeOffsetSync() {
+  const page = (document.body.getAttribute('data-page') || '').toLowerCase();
+  if (page !== 'home') return;
+
+  const header = document.querySelector('.site-header');
+  const categoryBar = document.querySelector('.category-bar');
+  if (!header || !categoryBar) return;
+
+  const syncOffsets = () => {
+    const headerHeight = Math.ceil(header.getBoundingClientRect().height);
+    const barHeight = Math.ceil(categoryBar.getBoundingClientRect().height);
+
+    document.documentElement.style.setProperty('--home-header-h', `${headerHeight}px`);
+    document.documentElement.style.setProperty('--home-bar-h', `${barHeight}px`);
+    categoryBar.style.top = `${headerHeight}px`;
+  };
+
+  syncOffsets();
+  window.addEventListener('resize', syncOffsets);
+  window.addEventListener('orientationchange', syncOffsets);
+  window.addEventListener('load', syncOffsets);
+}
+
 function initCategoryBarMode() {
   const page = document.body.getAttribute('data-page');
   if (!page) return;
@@ -217,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCategoryBarMode();
   initPortfolioWheelVersionQuery();
   initFineArtsCategoryBarSync();
+  initHomeOffsetSync();
   setActiveNavLink();
   setActiveCategoryLink();
   initContactForm();

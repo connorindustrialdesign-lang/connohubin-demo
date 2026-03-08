@@ -278,6 +278,7 @@
       @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
         body[data-page="portfolio-wheel"] #industrial-design .grid {
           grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: auto auto auto;
           gap: 20px;
           padding: 28px 20px 0 20px;
         }
@@ -314,6 +315,10 @@
           transform: none !important;
         }
 
+        body[data-page="portfolio-wheel"] #industrial-design .tile--right-top .img-wrapper img {
+          transform: none !important;
+        }
+
         body[data-page="portfolio-wheel"] #industrial-design .tile--right-bottom-left {
           grid-column: 3;
           grid-row: 2;
@@ -327,7 +332,7 @@
         }
 
         .id-project-e-tile {
-          aspect-ratio: 2.4 / 1;
+          aspect-ratio: 4 / 1;
           grid-column: 1 / -1;
           grid-row: 3;
           background-size: contain !important;

@@ -6,23 +6,28 @@
     <title>Connor Hubin — Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+      :root {
+        --home-header-h: 88px;
+        --home-bar-h: 64px;
+      }
+
       body[data-page="home"] {
         background: #fafaf8;
-        padding-top: calc(88px + 64px);
+        padding-top: calc(var(--home-header-h) + var(--home-bar-h));
       }
 
       body[data-page="home"] .category-bar {
-        top: 88px !important;
+        top: var(--home-header-h) !important;
         position: fixed !important;
         z-index: 1002 !important;
       }
       
       .hero-project {
-        min-height: 100vh;
+        min-height: calc(100vh - (var(--home-header-h) + var(--home-bar-h)));
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        padding: 60px 20px 120px;
+        padding: 32px 20px 40px;
       }
       
       .hero-project-wrapper {
@@ -120,9 +125,14 @@
       }
       
       @media (max-width: 1024px) {
+        :root {
+          --home-header-h: 88px;
+          --home-bar-h: 64px;
+        }
+
         .hero-project-wrapper {
           grid-template-columns: 1fr;
-          gap: 40px;
+          gap: 24px;
           align-items: flex-start;
         }
         
@@ -137,9 +147,23 @@
       }
       
       @media (max-width: 768px) {
+        :root {
+          --home-header-h: 72px;
+          --home-bar-h: 56px;
+        }
+
         .hero-project {
           min-height: auto;
-          padding: 40px 16px 60px;
+          padding: 20px 16px 24px;
+        }
+
+        .hero-project-wrapper {
+          gap: 16px;
+        }
+
+        .hero-project-image img {
+          max-height: 36vh;
+          object-fit: cover;
         }
         
         .hero-project-text {
@@ -149,7 +173,7 @@
         .gallery-caption {
           font-size: 16px;
           max-width: 100%;
-          margin-bottom: 24px;
+          margin-bottom: 14px;
         }
         
         .projects-button {
@@ -160,8 +184,17 @@
       }
       
       @media (max-width: 480px) {
+        :root {
+          --home-header-h: 64px;
+          --home-bar-h: 48px;
+        }
+
         .hero-project {
-          padding: 32px 12px 48px;
+          padding: 16px 12px 18px;
+        }
+
+        .hero-project-image img {
+          max-height: 32vh;
         }
         
         .hero-project-text {
