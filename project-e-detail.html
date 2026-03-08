@@ -108,9 +108,17 @@
             align-items: start;
         }
 
-        .functions-image img {
+        .functions-image-stack {
+            display: grid;
+            gap: 22px;
+        }
+
+        .functions-image-stack .grid-item img {
             width: 100%;
+            aspect-ratio: 4 / 3;
             height: auto;
+            object-fit: cover;
+            object-position: center;
             display: block;
         }
 
@@ -350,16 +358,23 @@
                 </div>
                 <div class="section-text">
                     <ul class="functions-list">
-                        <li>Ambient lighting for night use</li>
-                        <li>Stable top surface for daily items</li>
-                        <li>Compact footprint with clear access</li>
-                        <li>Readable form language in low light</li>
+                        <li>Phone</li>
+                        <li>Wallet</li>
+                        <li>Keys</li>
+                        <li>Cup holder</li>
+                        <li>Pen</li>
                     </ul>
                 </div>
             </div>
-            <div class="functions-image">
-                <img src="assets/images/project%20E/TOPVIEW.29.jpg" alt="Top view of Nightstand">
-                <div class="image-caption">IMAGE 4</div>
+            <div class="functions-image-stack">
+                <div class="grid-item">
+                    <img src="assets/images/project%20E/TOPVIEW.29.jpg" alt="Top view of Nightstand">
+                    <div class="image-caption">IMAGE 4</div>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/images/project%20E/organize.jpg" alt="Nightstand organization layout">
+                    <div class="image-caption">ORGANIZE</div>
+                </div>
             </div>
         </section>
 
