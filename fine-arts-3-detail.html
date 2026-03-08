@@ -8,12 +8,16 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body[data-page="fine-arts"] {
-            padding-top: calc(88px + 64px);
+            padding-top: 64px;
             background: #fafaf8;
         }
-        
+
+        body[data-page="fine-arts"] .site-header {
+            display: none !important;
+        }
+
         body[data-page="fine-arts"] .category-bar {
-            top: 88px !important;
+            top: 0 !important;
             position: fixed !important;
             z-index: 1002 !important;
         }
@@ -99,7 +103,7 @@
         /* Mobile: single column stack */
         @media (max-width: 768px) {
             body[data-page="fine-arts"] {
-                padding-top: calc(88px + 56px);
+                padding-top: 56px;
             }
 
             .project-header {
@@ -127,7 +131,7 @@
         /* Extra small phones */
         @media (max-width: 480px) {
             body[data-page="fine-arts"] {
-                padding-top: calc(88px + 48px);
+                padding-top: 48px;
             }
 
             .project-header {
@@ -188,7 +192,7 @@
         <div class="gallery-hero"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260308a"></script>
 
 </body>
 </html>

@@ -7,6 +7,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
+        body[data-page="fine-arts"] {
+            padding-top: 64px;
+            background: #fafaf8;
+        }
+
+        body[data-page="fine-arts"] .site-header {
+            display: none !important;
+        }
+
+        body[data-page="fine-arts"] .category-bar {
+            top: 0 !important;
+            position: fixed !important;
+            z-index: 1002 !important;
+        }
+
         .painting-gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -372,7 +387,7 @@
         });
     </script>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260308a"></script>
 
 </body>
 </html>
