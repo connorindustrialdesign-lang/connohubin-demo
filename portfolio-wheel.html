@@ -276,10 +276,39 @@
       }
 
       @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+        body[data-page="portfolio-wheel"] #industrial-design .grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+          padding: 28px 24px 0 24px;
+        }
+
+        body[data-page="portfolio-wheel"] #industrial-design .tile--left-full {
+          grid-column: 1;
+          grid-row: 1 / span 2;
+        }
+
+        body[data-page="portfolio-wheel"] #industrial-design .tile--right-top {
+          grid-column: 2;
+          grid-row: 1;
+        }
+
+        body[data-page="portfolio-wheel"] #industrial-design .tile--right-bottom-left {
+          grid-column: 2;
+          grid-row: 2;
+        }
+
+        body[data-page="portfolio-wheel"] #industrial-design .tile--right-bottom-right {
+          grid-column: 1 / -1;
+          grid-row: 3;
+          aspect-ratio: 16 / 9;
+        }
+
         .id-project-e-tile {
-          width: min(100%, 720px);
-          justify-self: center;
-          aspect-ratio: 1.8 / 1;
+          width: 100%;
+          justify-self: stretch;
+          aspect-ratio: 2.4 / 1;
+          grid-column: 1 / -1;
+          grid-row: 4;
           background-size: contain !important;
           background-repeat: no-repeat;
           background-position: center;
