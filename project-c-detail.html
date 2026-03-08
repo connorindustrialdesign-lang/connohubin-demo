@@ -80,12 +80,14 @@
             background: #f4f4f4;
             min-height: 220px;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: stretch;
+            justify-content: stretch;
             color: #666;
             font-weight: 600;
             text-align: center;
-            padding: 24px;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
         }
 
         .frame.hero {
@@ -101,6 +103,27 @@
         .frame-stack {
             display: grid;
             gap: 24px;
+        }
+
+        .frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #fafafa;
+            display: block;
+        }
+
+        .frame-label {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #111;
+            font-size: 12px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 8px 10px;
         }
 
         .hidden-link {
@@ -262,19 +285,19 @@
             </aside>
 
             <div class="story-content">
-                <div class="frame hero">Hero Perspective / Context View</div>
+                <div class="frame hero"><img src="assets/images/ID%20project%20c/form-sketch-01.jpg" alt="mill creek house form sketch 1"><div class="frame-label">Form Sketch 01</div></div>
                 <div class="frame-pair">
-                    <div class="frame">Site Plan + Orientation</div>
-                    <div class="frame">Ground Floor Plan</div>
+                    <div class="frame"><img src="assets/images/ID%20project%20c/form-sketch-02.jpg" alt="mill creek house form sketch 2"><div class="frame-label">Form Sketch 02</div></div>
+                    <div class="frame"><img src="assets/images/ID%20project%20c/form-sketch-03.jpg" alt="mill creek house form sketch 3"><div class="frame-label">Form Sketch 03</div></div>
                 </div>
-                <div class="frame">Section Cut + Daylight Strategy</div>
+                <div class="frame"><img src="assets/images/ID%20project%20c/form-sketch-04.jpg" alt="mill creek house form sketch 4"><div class="frame-label">Form Sketch 04</div></div>
                 <div class="frame-pair">
-                    <div class="frame">Material Palette + Details</div>
-                    <div class="frame">Structural Diagram</div>
+                    <div class="frame"><img src="assets/images/ID%20project%20c/form-sketch-05.jpg" alt="mill creek house form sketch 5"><div class="frame-label">Form Sketch 05</div></div>
+                    <div class="frame"><img src="assets/images/ID%20project%20c/form-sketch-02.jpg" alt="mill creek house form sketch detail"><div class="frame-label">Form Sketch Detail</div></div>
                 </div>
                 <div class="frame-stack">
-                    <div class="frame">Interior Sequence</div>
-                    <div class="frame">Final Exterior and Closing Statement</div>
+                    <div class="frame"><img src="assets/images/ID%20project%20c/form-sketch-03.jpg" alt="mill creek house form sketch variation"><div class="frame-label">Form Variation</div></div>
+                    <div class="frame"><img src="assets/images/ID%20project%20c/form-sketch-01.jpg" alt="mill creek house closing sketch"><div class="frame-label">Closing Sketch</div></div>
                 </div>
             </div>
         </section>

@@ -19,10 +19,13 @@
 
     .layout-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px; }
     .column-stack { display: grid; gap: 20px; }
-    .frame { background: #f6f6f6; min-height: 220px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #666; padding: 24px; text-align: center; }
+    .frame { background: #f6f6f6; min-height: 220px; display: flex; align-items: stretch; justify-content: stretch; font-weight: 600; color: #666; padding: 0; text-align: center; position: relative; overflow: hidden; }
     .frame.hero { min-height: 520px; }
     .frame.wide { grid-column: 1 / -1; min-height: 300px; }
     .frame.tall { min-height: 360px; }
+
+    .frame img { width: 100%; height: 100%; object-fit: contain; display: block; background: #fafafa; }
+    .frame-label { position: absolute; left: 12px; bottom: 12px; background: rgba(255,255,255,0.9); color: #111; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; padding: 8px 10px; }
     
     @media (max-width:1024px) {
       .project-shell { padding: 0 30px 72px; }
@@ -95,16 +98,16 @@
 
     <section class="layout-grid">
       <div class="column-stack">
-        <div class="frame hero">Hero Image / Product in Context</div>
-        <div class="frame">Problem Statement + Key Metrics</div>
-        <div class="frame">Exploded View / Component Breakdown</div>
+        <div class="frame hero"><img src="assets/images/ID%20project%20a/form-sketch-01.jpg" alt="CTE pack form sketch 1"><div class="frame-label">Form Sketch 01</div></div>
+        <div class="frame"><img src="assets/images/ID%20project%20a/form-sketch-02.jpg" alt="CTE pack form sketch 2"><div class="frame-label">Form Sketch 02</div></div>
+        <div class="frame"><img src="assets/images/ID%20project%20a/form-sketch-03.jpg" alt="CTE pack form sketch 3"><div class="frame-label">Form Sketch 03</div></div>
       </div>
       <div class="column-stack">
-        <div class="frame tall">Form Iterations / Sketch Progression</div>
-        <div class="frame">User Flow + Interaction Touchpoints</div>
-        <div class="frame">Material + Manufacturing Decisions</div>
+        <div class="frame tall"><img src="assets/images/ID%20project%20a/form-sketch-04.jpg" alt="CTE pack form sketch 4"><div class="frame-label">Form Sketch 04</div></div>
+        <div class="frame"><img src="assets/images/ID%20project%20a/form-sketch-05.jpg" alt="CTE pack form sketch 5"><div class="frame-label">Form Sketch 05</div></div>
+        <div class="frame"><img src="assets/images/ID%20project%20a/form-sketch-06.jpg" alt="CTE pack form sketch 6"><div class="frame-label">Form Sketch 06</div></div>
       </div>
-      <div class="frame wide">Prototype Results + Final Product Story</div>
+      <div class="frame wide"><img src="assets/images/ID%20project%20a/form-sketch-07.jpg" alt="CTE pack form sketch 7"><div class="frame-label">Form Sketch 07</div></div>
     </section>
   </main>
 
