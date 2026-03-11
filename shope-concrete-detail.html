@@ -177,11 +177,18 @@
         <div class="cad-item"><img src="assets/images/shope/IMG_5524.jpeg" alt="Shope Project Photo 2"></div>
       </section>
 
-      <section class="example-drawings-row" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 32px;">
-        <div class="cad-item" style="flex: 0 1 300px; max-width: 300px;"><img src="assets/images/shope/cad drawings - Shope/thumb.png" alt="CAD Drawing"></div>
-        <div class="cad-item" style="flex: 0 1 300px; max-width: 300px;"><img src="assets/images/shope/cad drawings - Shope/thumb-3.png" alt="CAD Drawing 2"></div>
-        <div class="cad-item" style="flex: 0 1 300px; max-width: 300px;"><img src="assets/images/shope/cad drawings - Shope/thumb-2.png" alt="CAD Drawing 3"></div>
+      <section class="example-drawings-row">
+        <div class="cad-item"><img src="assets/images/shope/cad drawings - Shope/thumb.png" alt="CAD Drawing"></div>
+        <div class="cad-item"><img src="assets/images/shope/cad drawings - Shope/thumb-3.png" alt="CAD Drawing 2"></div>
+        <div class="cad-item"><img src="assets/images/shope/cad drawings - Shope/thumb-2.png" alt="CAD Drawing 3"></div>
       </section>
+      .example-drawings-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 32px;
+        max-width: 100%;
+      }
 
       <section class="project-links" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 700px; margin: 0 auto 40px auto; align-items: start; height: auto;">
         <a href="shope-drawings-portfolio.html" class="project-link-box">
